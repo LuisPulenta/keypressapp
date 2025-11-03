@@ -69,7 +69,7 @@ class _DetailsView extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                Text(message!.body),
+                Text(message!.message),
               ],
             )
           : Center(

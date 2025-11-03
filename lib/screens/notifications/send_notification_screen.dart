@@ -324,8 +324,11 @@ class _SendNotificationScreenState extends State<SendNotificationScreen> {
       Map<String, dynamic> request = {
         "message": {
           "token": userToken.token,
-          "data": {"user": _notificationUser},
-          "notification": {"title": _title, "body": _message},
+          "data": {"user": _notificationUser, "message": _message},
+          "notification": {
+            "title": _title,
+            "body": "Mensaje para ${userToken.usuario}",
+          },
           "android": {
             "notification": {
               "image":

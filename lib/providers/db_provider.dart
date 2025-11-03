@@ -28,7 +28,7 @@ class DBProvider {
       onOpen: (db) {},
       onCreate: (Database db, int version) async {
         await db.execute(
-          'CREATE TABLE Notifications(id INTEGER PRIMARY KEY AUTOINCREMENT,messageId INTEGER,sentDate TEXT,title TEXT,body TEXT,user TEXT,imageUrl TEXT,readed BOOL)',
+          'CREATE TABLE Notifications(id INTEGER PRIMARY KEY AUTOINCREMENT,messageId INTEGER,sentDate TEXT,title TEXT,body TEXT,user TEXT,message TEXT,imageUrl TEXT,readed BOOL)',
         );
       },
     );
@@ -41,6 +41,7 @@ class DBProvider {
     final title = newNotification.title;
     final body = newNotification.body;
     final user = newNotification.user;
+    final message = newNotification.message;
     final imageUrl = newNotification.imageUrl;
     final readed = newNotification.readed;
 
@@ -48,8 +49,8 @@ class DBProvider {
     final db = await database;
 
     final res = await db?.rawInsert('''
-      INSERT INTO Notifications( messageId,sentDate, title, body, user, imageUrl,readed )
-        VALUES( '$messageId', '$sentDate', '$title','$body', '$user', '$imageUrl', '$readed' )
+      INSERT INTO Notifications( messageId,sentDate, title, body, user, message,imageUrl,readed )
+        VALUES( '$messageId', '$sentDate', '$title','$body', '$user', '$message', '$imageUrl', '$readed' )
     ''');
     return res;
   }

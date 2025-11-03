@@ -88,6 +88,7 @@ class NotificationsBloc extends Bloc<NotificationsEvent, NotificationsState> {
       body: message.notification!.body ?? '',
       sentDate: message.sentTime ?? DateTime.now(),
       user: message.data['user'],
+      message: message.data['message'],
       imageUrl: Platform.isAndroid
           ? message.notification!.android?.imageUrl
           : message.notification!.apple?.imageUrl,
@@ -104,6 +105,29 @@ class NotificationsBloc extends Bloc<NotificationsEvent, NotificationsState> {
         title: notification.title,
       );
     }
+    add(NotificationReceiver(notification));
+  }
+
+  //-------------------------------------------------------------------------------
+  Future<void> handleRemoteMessage2(RemoteMessage message) async {
+    if (message.notification == null) return;
+    PushMessage notification = PushMessage(
+      id: 0,
+      messageId:
+          message.messageId?.replaceAll(':', '').replaceAll('%', '') ?? '',
+      title: message.notification!.title ?? '',
+      body: message.notification!.body ?? '',
+      sentDate: message.sentTime ?? DateTime.now(),
+      user: message.data['user'],
+      message: message.data['message'],
+      imageUrl: Platform.isAndroid
+          ? message.notification!.android?.imageUrl
+          : message.notification!.apple?.imageUrl,
+    );
+
+    final id = await DBProvider.db.newNotificationRaw(notification);
+    notification = notification.copyWith(id: id);
+
     add(NotificationReceiver(notification));
   }
 

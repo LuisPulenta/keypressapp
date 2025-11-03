@@ -5,6 +5,7 @@ class PushMessage {
   final String body;
   final DateTime sentDate;
   final String user;
+  final String message;
   final String? imageUrl;
   bool readed;
 
@@ -15,6 +16,7 @@ class PushMessage {
     required this.body,
     required this.sentDate,
     required this.user,
+    required this.message,
     this.imageUrl,
     this.readed = false,
   });
@@ -26,6 +28,7 @@ class PushMessage {
     body: json['body'],
     sentDate: DateTime.parse(json['sentDate']),
     user: json['user'],
+    message: json['message'],
     imageUrl: json['imageUrl'] ?? '',
     readed: json['readed'] == 1,
   );
@@ -37,6 +40,7 @@ class PushMessage {
     'body': body,
     'sentDate': sentDate,
     'user': user,
+    'message': message,
     'imageUrl': imageUrl,
     'readed': readed,
   };
@@ -49,6 +53,7 @@ class PushMessage {
     String? body,
     DateTime? sentDate,
     String? user,
+    String? message,
     String? imageUrl,
     bool? readed,
   }) {
@@ -59,6 +64,7 @@ class PushMessage {
       body: body ?? this.body,
       sentDate: sentDate ?? this.sentDate,
       user: user ?? this.user,
+      message: message ?? this.message,
       imageUrl: imageUrl ?? this.imageUrl,
       readed: readed ?? this.readed,
     );
@@ -74,6 +80,7 @@ class PushMessage {
   body:     $body
   sentDate: $sentDate
   user:     $user
+  message:  $message
   imageUrl: $imageUrl
   readed:   $readed
 
