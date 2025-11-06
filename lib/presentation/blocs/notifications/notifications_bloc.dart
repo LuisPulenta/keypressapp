@@ -58,7 +58,7 @@ class NotificationsBloc extends Bloc<NotificationsEvent, NotificationsState> {
   }
 
   //-------------------------------------------------------------------------------
-  void initialStatusCheck() async {
+  Future<void> initialStatusCheck() async {
     final settings = await messaging.getNotificationSettings();
     add(NotificationStatusChanged(settings.authorizationStatus));
     getFCMToken();

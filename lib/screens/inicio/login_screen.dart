@@ -574,7 +574,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
     //---------- Registra Token Notification ----------
     final notificationsBloc = context.read<NotificationsBloc>();
-    notificationsBloc.initialStatusCheck();
+    await notificationsBloc.initialStatusCheck();
     String token = await notificationsBloc.getFCMToken();
 
     if (token != '') {
