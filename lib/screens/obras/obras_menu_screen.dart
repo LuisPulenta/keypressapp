@@ -20,7 +20,7 @@ class ObrasMenuScreen extends StatelessWidget {
 
   //----------------------- _getBody ------------------------------
   Widget _getBody(BuildContext context) {
-    final appStateProvider = context.watch<AppStateProvider>();
+    final appStateProvider = context.read<AppStateProvider>();
     User user = appStateProvider.user;
     double ancho = MediaQuery.of(context).size.width;
     return Container(
@@ -53,7 +53,7 @@ class ObrasMenuScreen extends StatelessWidget {
           ),
           InkWell(
             onTap: () {
-              appRouter.push('/obrasmenu');
+              appRouter.push('/obras');
             },
             child: SizedBox(
               width: ancho,

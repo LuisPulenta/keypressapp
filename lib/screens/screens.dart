@@ -6,6 +6,7 @@ export 'package:keypressapp/screens/flotas/flota_check_list_screen.dart';
 export 'package:keypressapp/screens/flotas/flota_display_picture_screen.dart';
 export 'package:keypressapp/screens/flotas/flota_km_preventivo_screen.dart';
 export 'package:keypressapp/screens/flotas/flota_menu_screen.dart';
+export 'package:keypressapp/screens/flotas/flota_siniestros_screen.dart';
 export 'package:keypressapp/screens/flotas/flota_take_picture_screen.dart';
 export 'package:keypressapp/screens/flotas/flota_turnos_agregar_screen.dart';
 export 'package:keypressapp/screens/flotas/flota_turnos_taller_screen.dart';

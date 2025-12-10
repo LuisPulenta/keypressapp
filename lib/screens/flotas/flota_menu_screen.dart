@@ -48,12 +48,27 @@ class FlotaMenuScreen extends StatelessWidget {
           ),
           InkWell(
             onTap: () async {
+              appRouter.push('/flotasiniestros');
+            },
+            child: SizedBox(
+              width: ancho,
+              child: const Boton(
+                icon: FontAwesomeIcons.carBurst,
+                texto: 'Siniestros',
+                color1: Color(0xff906EF5),
+                color2: Color.fromARGB(199, 216, 213, 213),
+              ),
+            ),
+          ),
+          const SizedBox(height: 5),
+          InkWell(
+            onTap: () async {
               appRouter.push('/flotakmpreventivo');
             },
             child: SizedBox(
               width: ancho,
               child: const Boton(
-                icon: FontAwesomeIcons.carBurst, //Icons.taxi_alert
+                icon: FontAwesomeIcons.toolbox, //Icons.taxi_alert
                 texto: 'Km. y Preventivos',
                 color1: Color(0xff6989F5),
                 color2: Color.fromARGB(200, 104, 101, 101),

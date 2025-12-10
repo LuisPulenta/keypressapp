@@ -34,10 +34,10 @@ Future<String?> customQuestionDialog(
                 ),
                 child: Text(
                   title1,
-                  style: const TextStyle(color: Colors.white, fontSize: 15),
+                  style: const TextStyle(color: Colors.white, fontSize: 14),
                 ),
               ),
-              const SizedBox(width: 5),
+              const SizedBox(width: 2),
               ElevatedButton(
                 onPressed: () {
                   Navigator.pop(context, option2);
@@ -48,10 +48,10 @@ Future<String?> customQuestionDialog(
                 ),
                 child: Text(
                   title2,
-                  style: const TextStyle(color: Colors.white, fontSize: 15),
+                  style: const TextStyle(color: Colors.white, fontSize: 14),
                 ),
               ),
-              const SizedBox(width: 5),
+              const SizedBox(width: 2),
               ElevatedButton(
                 onPressed: () {
                   Navigator.pop(context, 'cancel');
@@ -62,7 +62,7 @@ Future<String?> customQuestionDialog(
                 ),
                 child: const Text(
                   'Cancelar',
-                  style: TextStyle(color: Colors.white, fontSize: 15),
+                  style: TextStyle(color: Colors.white, fontSize: 14),
                 ),
               ),
             ],

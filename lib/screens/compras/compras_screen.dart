@@ -339,7 +339,7 @@ class ComprasScreenState extends State<ComprasScreen> {
 
   //----------------------- _getCompras -----------------------------
   Future<void> _getCompras() async {
-    final appStateProvider = context.watch<AppStateProvider>();
+    final appStateProvider = context.read<AppStateProvider>();
     User user = appStateProvider.user;
     setState(() {
       _showLoader = true;

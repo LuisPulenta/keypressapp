@@ -402,7 +402,7 @@ class _ObrasScreenState extends State<ObrasScreen> {
 
   //----------------------- _getObras -----------------------------
   Future<void> _getObras() async {
-    final appStateProvider = context.watch<AppStateProvider>();
+    final appStateProvider = context.read<AppStateProvider>();
     User user = appStateProvider.user;
     setState(() {
       _showLoader = true;
@@ -449,7 +449,7 @@ class _ObrasScreenState extends State<ObrasScreen> {
 
   //----------------------- _goInfoObra ---------------------------
   void _goInfoObra(Obra obra) async {
-    final appStateProvider = context.watch<AppStateProvider>();
+    final appStateProvider = context.read<AppStateProvider>();
     User user = appStateProvider.user;
     String? result = await Navigator.push(
       context,

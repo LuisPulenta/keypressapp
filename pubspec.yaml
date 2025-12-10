@@ -2,7 +2,7 @@ name: keypressapp
 description: "A new Flutter project."
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
-publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+publish_to: "none" # Remove this line if you wish to publish to pub.dev
 
 # The following defines the version and build number for your application.
 # A version number is three numbers separated by dots, like 1.2.43
@@ -31,33 +31,33 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_localizations: # Add this line
-    sdk: flutter         # Add this line
+    sdk: flutter # Add this line
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8
   flutter_launcher_icons: ^0.14.4 # Para poner el ícono a la app
-  flutter_native_splash: ^2.4.6   # Para poner el splash
+  flutter_native_splash: ^2.4.6 # Para poner el splash
 
-  adaptive_dialog: ^2.4.2         # Para cuadros de diálogo
+  adaptive_dialog: ^2.4.2 # Para cuadros de diálogo
   animate_do: ^4.2.0
-  cached_network_image: ^3.4.1    # Para mejorar el rendimiento de imágenes
-  camera: ^0.11.0+1                # Para acceder a la cámara
-  carousel_slider: ^5.1.1         # Para carousel de imágenes
-  connectivity_plus: ^6.0.3       # Para chequear conexión a Internet
+  cached_network_image: ^3.4.1 # Para mejorar el rendimiento de imágenes
+  camera: ^0.11.0+1 # Para acceder a la cámara
+  carousel_slider: ^5.1.1 # Para carousel de imágenes
+  connectivity_plus: ^6.0.3 # Para chequear conexión a Internet
   flutter_device_imei: ^0.0.4
   flutter_svg: ^2.2.0
   font_awesome_flutter: ^10.1.0
-  geocoding: ^4.0.0               # Para direccion de una latitud y longitud
-  geolocator: ^14.0.2             # Para latitud y longitud
-  http: ^1.5.0                    # Para consumir APIs 
-  image_picker: ^1.2.0            # Para acceder a la galería de imágenes
-  intl: ^0.20.0                   # Para ver formato moneda
-  path: ^1.8.0                    # Para acceder a la cámara
-  path_provider: ^2.1.5           # Para acceder a la cámara
+  geocoding: ^4.0.0 # Para direccion de una latitud y longitud
+  geolocator: ^14.0.2 # Para latitud y longitud
+  http: ^1.5.0 # Para consumir APIs
+  image_picker: ^1.2.0 # Para acceder a la galería de imágenes
+  intl: ^0.20.0 # Para ver formato moneda
+  path: ^1.8.0 # Para acceder a la cámara
+  path_provider: ^2.1.5 # Para acceder a la cámara
   permission_handler: ^12.0.1
   provider: ^6.0.2
-  shared_preferences: ^2.0.8      # Para el rememberme
+  shared_preferences: ^2.0.8 # Para el rememberme
 
   go_router: ^16.2.4
   flutter_bloc: 9.1.1
@@ -67,8 +67,6 @@ dependencies:
   flutter_local_notifications: ^19.4.2
   sqflite: ^2.0.2
 
-
-
 dependency_overrides:
   dynamic_color: ^1.8.1
   characters: ^1.4.1
@@ -76,16 +74,14 @@ dependency_overrides:
   meta: ^1.17.0
   test_api: ^0.7.7
 
-
 flutter_icons:
   android: "launcher_icon"
   ios: true
   image_path: "assets/ic_launcher.png"
 
 flutter_native_splash:
-  image: "assets/splash.png"  
+  image: "assets/splash.png"
   color: "#FFFFFF"
-
 
 dev_dependencies:
   flutter_test:
@@ -103,7 +99,6 @@ dev_dependencies:
 
 # The following section is specific to Flutter packages.
 flutter:
-
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
@@ -117,7 +112,7 @@ flutter:
     - family: PTSansNarrow-Regular
       fonts:
         - asset: fonts/PTSansNarrow-Regular.ttf
-        - asset: fonts/PTSansNarrow-Bold.ttf 
+        - asset: fonts/PTSansNarrow-Bold.ttf
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

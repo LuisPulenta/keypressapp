@@ -108,7 +108,7 @@ final appRouter = GoRouter(
     ),
 
     GoRoute(
-      path: '/obrasrelevamienros',
+      path: '/obrasrelevamientos',
       builder: (context, state) {
         return ObrasRelevamientosScreen();
       },
@@ -136,6 +136,13 @@ final appRouter = GoRouter(
     ),
 
     GoRoute(
+      path: '/flotasiniestros',
+      builder: (context, state) {
+        return FlotaSiniestrosScreen();
+      },
+    ),
+
+    GoRoute(
       path: '/flotakmpreventivo',
       builder: (context, state) {
         return FlotaKmPreventivoScreen();
@@ -143,7 +150,7 @@ final appRouter = GoRouter(
     ),
 
     GoRoute(
-      path: '/flotachecklisy',
+      path: '/flotachecklist',
       builder: (context, state) {
         return FlotaCheckListScreen();
       },

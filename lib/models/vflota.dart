@@ -7,8 +7,8 @@ class VFlota {
 
   VFlota.fromJson(Map<String, dynamic> json) {
     numcha = json['numcha'];
-    grupoV = json['grupoV'];
-    causanteV = json['causanteV'];
+    grupoV = json['grupoV'] ?? "";
+    causanteV = json['causanteV'] ?? "";
   }
 
   Map<String, dynamic> toJson() {
