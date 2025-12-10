@@ -262,6 +262,15 @@ class ObraInfoScreenState extends State<ObraInfoScreen> {
                                 ),
                               ),
                             ),
+
+                            Positioned(
+                              bottom: 18,
+                              left: 5,
+                              child: Text(
+                                obra.observacion ?? '',
+                                style: const TextStyle(color: Colors.white),
+                              ),
+                            ),
                           ],
                         ),
                       );
@@ -494,12 +503,13 @@ class ObraInfoScreenState extends State<ObraInfoScreen> {
                             : i.tipoDeFoto == 6
                             ? 'Proceso de reparación'
                             : '',
-                        style: const TextStyle(
-                          color: Colors.black,
-                          fontWeight: FontWeight.bold,
-                        ),
+                        style: const TextStyle(color: Colors.black),
                       ),
                       const SizedBox(height: 5),
+                      Text(
+                        i.observacion ?? '',
+                        style: const TextStyle(color: Colors.black),
+                      ),
                     ],
                   );
                 },
