@@ -16,6 +16,8 @@ export 'user.dart';
 export 'user_token.dart';
 export 'vehiculo.dart';
 export 'vehiculos_check_list.dart';
+export 'vehiculos_siniestro.dart';
+export 'vehiculos_siniestros_foto.dart';
 export 'vehiculoskilometraje.dart';
 export 'vehiculosprogramaprev.dart';
 export 'vflota.dart';
