@@ -63,6 +63,7 @@ class _CompanyScreenState extends State<CompanyScreen> {
                             Preferences.company = apisToSelect[index].company;
                             Preferences.connection =
                                 apisToSelect[index].connection;
+                            Preferences.logo = apisToSelect[index].logo;
 
                             appRouter.pushReplacement('/loading');
                           },
@@ -120,6 +121,7 @@ class _CompanyScreenState extends State<CompanyScreen> {
         ApiToSelect apiToSelect = ApiToSelect(
           company: empresa.nombreEmpresa,
           connection: empresa.linkApi,
+          logo: empresa.logo,
         );
         apisToSelect.add(apiToSelect);
       }
@@ -135,6 +137,11 @@ class _CompanyScreenState extends State<CompanyScreen> {
 class ApiToSelect {
   String company;
   String connection;
+  String logo;
 
-  ApiToSelect({required this.company, required this.connection});
+  ApiToSelect({
+    required this.company,
+    required this.connection,
+    required this.logo,
+  });
 }

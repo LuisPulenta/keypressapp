@@ -10,19 +10,22 @@ class Empresa {
   int habilitaReciboSueldos = 0;
   String linkApi = '';
   int habilitaCompras = 0;
+  String logo = '';
 
-  Empresa(
-      {required this.id,
-      required this.nombreEmpresa,
-      required this.habilitaEmpresa,
-      required this.habilitaObras,
-      required this.habilitaInventarios,
-      required this.habilitaInstalaciones,
-      required this.habilitaFlotas,
-      required this.habilitaRRHH,
-      required this.habilitaReciboSueldos,
-      required this.linkApi,
-      required this.habilitaCompras});
+  Empresa({
+    required this.id,
+    required this.nombreEmpresa,
+    required this.habilitaEmpresa,
+    required this.habilitaObras,
+    required this.habilitaInventarios,
+    required this.habilitaInstalaciones,
+    required this.habilitaFlotas,
+    required this.habilitaRRHH,
+    required this.habilitaReciboSueldos,
+    required this.linkApi,
+    required this.habilitaCompras,
+    required this.logo,
+  });
 
   Empresa.fromJson(Map<String, dynamic> json) {
     id = json['id'];
@@ -36,6 +39,7 @@ class Empresa {
     habilitaReciboSueldos = json['habilitaReciboSueldos'];
     linkApi = json['linkApi'];
     habilitaCompras = json['habilitaCompras'];
+    logo = json['logo'] ?? '';
   }
 
   Map<String, dynamic> toJson() {
@@ -51,6 +55,7 @@ class Empresa {
     data['habilitaReciboSueldos'] = habilitaReciboSueldos;
     data['linkApi'] = linkApi;
     data['habilitaCompras'] = habilitaCompras;
+    data['logo'] = logo;
     return data;
   }
 }

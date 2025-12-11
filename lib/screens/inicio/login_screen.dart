@@ -49,6 +49,7 @@ class _LoginScreenState extends State<LoginScreen> {
   bool _showLoader = false;
 
   String companySelected = '';
+  String companyLogo = '';
   String connectionSelected = '';
   Empresa? _empresa;
 
@@ -163,6 +164,7 @@ class _LoginScreenState extends State<LoginScreen> {
   //----------------------- _getData ------------------------------
   void _getData() async {
     companySelected = Preferences.company;
+    companyLogo = Preferences.logo;
     connectionSelected = Preferences.connection;
     setState(() {});
     _getEmpresa();
@@ -258,6 +260,25 @@ class _LoginScreenState extends State<LoginScreen> {
                         fontWeight: FontWeight.bold,
                       ),
                     ),
+
+                    //---------- Logo ----------
+                    if (companyLogo != '')
+                      Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20),
+                          color: Colors.white,
+                        ),
+                        height: 100,
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 10),
+                          child: Image.network(
+                            companyLogo,
+                            height: 150,
+                            width: 350,
+                          ),
+                        ),
+                      ),
+
                     Card(
                       color: const Color.fromARGB(255, 203, 222, 241),
                       shape: RoundedRectangleBorder(

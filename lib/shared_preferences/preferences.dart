@@ -10,6 +10,7 @@ class Preferences {
   static String _date = '';
   static bool _isRemembered = false;
   static int _nroConexion = 0;
+  static String _logo = '';
 
   //----------------------------------------------------
   static Future init() async {
@@ -24,6 +25,16 @@ class Preferences {
   static set connection(String connection) {
     _connection = connection;
     _prefs.setString('connection', connection);
+  }
+
+  //----------------------------------------------------
+  static String get logo {
+    return _prefs.getString('logo') ?? _logo;
+  }
+
+  static set logo(String logo) {
+    _logo = logo;
+    _prefs.setString('logo', logo);
   }
 
   //----------------------------------------------------
