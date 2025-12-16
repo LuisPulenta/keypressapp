@@ -7,17 +7,18 @@ import 'package:flutter/material.dart';
 import '../../models/photo.dart';
 import '../../models/response.dart';
 
-class FlotaDisplayPictureScreen extends StatefulWidget {
+class FlotaSiniestrosDisplayPictureScreen extends StatefulWidget {
   final XFile image;
 
-  const FlotaDisplayPictureScreen({super.key, required this.image});
+  const FlotaSiniestrosDisplayPictureScreen({super.key, required this.image});
 
   @override
-  _FlotaDisplayPictureScreenState createState() =>
-      _FlotaDisplayPictureScreenState();
+  _FlotaSiniestrosDisplayPictureScreenState createState() =>
+      _FlotaSiniestrosDisplayPictureScreenState();
 }
 
-class _FlotaDisplayPictureScreenState extends State<FlotaDisplayPictureScreen> {
+class _FlotaSiniestrosDisplayPictureScreenState
+    extends State<FlotaSiniestrosDisplayPictureScreen> {
   //---------------------------------------------------------------------
   //-------------------------- Variables --------------------------------
   //---------------------------------------------------------------------

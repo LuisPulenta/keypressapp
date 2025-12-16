@@ -1,28 +1,28 @@
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
-import 'package:keypressapp/models/models.dart';
-import 'package:keypressapp/screens/screens.dart';
+import 'package:keypressapp/models/response.dart';
+import 'package:keypressapp/screens/flotas/display_picture4_screen.dart';
 
-class FlotaTakePictureScreen extends StatefulWidget {
+class TakePicture4Screen extends StatefulWidget {
   final CameraDescription camera;
 
-  const FlotaTakePictureScreen({super.key, required this.camera});
+  const TakePicture4Screen({super.key, required this.camera});
 
   @override
-  _FlotaTakePictureScreenState createState() => _FlotaTakePictureScreenState();
+  _TakePicture4ScreenState createState() => _TakePicture4ScreenState();
 }
 
-class _FlotaTakePictureScreenState extends State<FlotaTakePictureScreen> {
-  //-----------------------------------------------------------------------------
-  //----------------------------- Variables -------------------------------------
-  //-----------------------------------------------------------------------------
+class _TakePicture4ScreenState extends State<TakePicture4Screen> {
+  //---------------------------------------------------------------
+  //----------------------- Variables -----------------------------
+  //---------------------------------------------------------------
 
   late CameraController _controller;
   late Future<void> _initializeControllerFuture;
 
-  //-----------------------------------------------------------------------------
-  //----------------------------- initState -------------------------------------
-  //-----------------------------------------------------------------------------
+  //---------------------------------------------------------------
+  //----------------------- initState -----------------------------
+  //---------------------------------------------------------------
 
   @override
   void initState() {
@@ -37,9 +37,9 @@ class _FlotaTakePictureScreenState extends State<FlotaTakePictureScreen> {
     super.dispose();
   }
 
-  //-----------------------------------------------------------------------------
-  //----------------------------- Pantalla --------------------------------------
-  //-----------------------------------------------------------------------------
+  //---------------------------------------------------------------
+  //----------------------- Pantalla ------------------------------
+  //---------------------------------------------------------------
 
   @override
   Widget build(BuildContext context) {
@@ -63,8 +63,7 @@ class _FlotaTakePictureScreenState extends State<FlotaTakePictureScreen> {
             final image = await _controller.takePicture();
             Response? response = await Navigator.of(context).push(
               MaterialPageRoute(
-                builder: (context) =>
-                    FlotaSiniestrosDisplayPictureScreen(image: image),
+                builder: (context) => DisplayPicture4Screen(image: image),
               ),
             );
             if (response != null) {

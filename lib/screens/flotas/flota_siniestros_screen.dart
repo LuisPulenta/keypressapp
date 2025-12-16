@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:keypressapp/helpers/image_helper.dart';
 import 'package:keypressapp/providers/providers.dart';
+import 'package:keypressapp/screens/screens.dart';
 import 'package:keypressapp/screens/widgets/customrow.dart';
 import 'package:keypressapp/utils/colors.dart';
 import 'package:provider/provider.dart';
@@ -112,6 +113,7 @@ class _FlotaSiniestrosScreenState extends State<FlotaSiniestrosScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(title: Text('Siniestros'), centerTitle: true),
       body: Stack(
         children: [
@@ -159,7 +161,7 @@ class _FlotaSiniestrosScreenState extends State<FlotaSiniestrosScreen> {
                                 'Cant. Siniestros: ',
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
-                                  color: Colors.white,
+                                  color: primaryColor,
                                   fontSize: 14,
                                   fontWeight: FontWeight.bold,
                                 ),
@@ -168,7 +170,7 @@ class _FlotaSiniestrosScreenState extends State<FlotaSiniestrosScreen> {
                                 _siniestros.length.toString(),
                                 textAlign: TextAlign.start,
                                 style: const TextStyle(
-                                  color: Colors.white,
+                                  color: primaryColor,
                                   fontSize: 14,
                                   fontWeight: FontWeight.bold,
                                 ),
@@ -195,7 +197,7 @@ class _FlotaSiniestrosScreenState extends State<FlotaSiniestrosScreen> {
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: _enabled
           ? FloatingActionButton(
-              backgroundColor: const Color(0xFF781f1e),
+              backgroundColor: primaryColor,
               onPressed: _enabled ? _addSiniestro : null,
               child: const Icon(Icons.add, size: 38),
             )
@@ -494,7 +496,7 @@ class _FlotaSiniestrosScreenState extends State<FlotaSiniestrosScreen> {
                         ).isAfter(DateTime.now().add(const Duration(days: -2)))
                         ? IconButton(
                             icon: const CircleAvatar(
-                              backgroundColor: Color(0xFF781f1e),
+                              backgroundColor: primaryColor,
                               child: Icon(
                                 Icons.edit,
                                 size: 24,
@@ -503,19 +505,17 @@ class _FlotaSiniestrosScreenState extends State<FlotaSiniestrosScreen> {
                             ),
                             onPressed: () async {
                               siniestroSelected = e;
-                              // String? result = await Navigator.push(
-                              //   context,
-                              //   MaterialPageRoute(
-                              //     builder: (context) => SiniestroEditarScreen(
-                              //       user: widget.user,
-                              //       siniestro: e,
-                              //     ),
-                              //   ),
-                              // );
+                              String? result = await Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) =>
+                                      FlotaSiniestroEditarScreen(siniestro: e),
+                                ),
+                              );
 
-                              // if (result == 'yes') {
-                              //   _getSiniestros();
-                              // }
+                              if (result == 'yes') {
+                                _getSiniestros();
+                              }
                             },
                           )
                         : Container(),
@@ -526,7 +526,7 @@ class _FlotaSiniestrosScreenState extends State<FlotaSiniestrosScreen> {
                         : Container(),
                     IconButton(
                       icon: const CircleAvatar(
-                        backgroundColor: Color(0xFF781f1e),
+                        backgroundColor: primaryColor,
                         child: Icon(
                           Icons.camera_alt,
                           size: 24,
@@ -813,16 +813,16 @@ class _FlotaSiniestrosScreenState extends State<FlotaSiniestrosScreen> {
   //-----------------------------------------------------------------
 
   void _addSiniestro() async {
-    // String? result = await Navigator.push(
-    //   context,
-    //   MaterialPageRoute(
-    //     builder: (context) =>
-    //         SiniestroAgregarScreen(user: widget.user, causante: _causante),
-    //   ),
-    // );
-    // if (result == 'yes') {
-    //   _getSiniestros();
-    // }
+    FocusScope.of(context).unfocus();
+    String? result = await Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => FlotaSiniestroAgregarScreen(causante: _causante),
+      ),
+    );
+    if (result == 'yes') {
+      _getSiniestros();
+    }
   }
 
   //-----------------------------------------------------------------
@@ -846,12 +846,11 @@ class _FlotaSiniestrosScreenState extends State<FlotaSiniestrosScreen> {
   //-----------------------------------------------------------------
 
   void _goInfoSiniestro(VehiculosSiniestro siniestro) async {
-    // String? result = await Navigator.push(
-    //   context,
-    //   MaterialPageRoute(
-    //     builder: (context) =>
-    //         SiniestroInfoScreen(user: widget.user, siniestro: siniestro),
-    //   ),
-    // );
+    String? result = await Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => FlotaSiniestroInfoScreen(siniestro: siniestro),
+      ),
+    );
   }
 }
