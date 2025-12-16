@@ -1112,6 +1112,7 @@ class _FlotaSiniestroEditarScreenState
       'detalledanostercero': _detalleDanosTercero,
       'detalledanospropio': _detalleDanosPropio,
       'numchatercero': _numchatercero,
+      'modulo': user.modulo,
     };
 
     Response response = await ApiHelper.put(
