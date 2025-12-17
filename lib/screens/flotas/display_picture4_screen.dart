@@ -2,8 +2,11 @@ import 'dart:io';
 
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
-import 'package:keypressapp/models/photo.dart';
-import 'package:keypressapp/models/response.dart';
+import 'package:geocoding/geocoding.dart';
+import 'package:geolocator/geolocator.dart';
+
+import '../../helpers/get_position.dart';
+import '../../models/models.dart';
 
 class DisplayPicture4Screen extends StatefulWidget {
   final XFile image;
@@ -11,51 +14,22 @@ class DisplayPicture4Screen extends StatefulWidget {
   const DisplayPicture4Screen({super.key, required this.image});
 
   @override
-  DisplayPicture4ScreenState createState() => DisplayPicture4ScreenState();
+  _DisplayPicture4ScreenState createState() => _DisplayPicture4ScreenState();
 }
 
-class DisplayPicture4ScreenState extends State<DisplayPicture4Screen> {
-  //---------------------------------------------------------------
+class _DisplayPicture4ScreenState extends State<DisplayPicture4Screen> {
   //----------------------- Variables -----------------------------
-  //---------------------------------------------------------------
-
   String _observaciones = '';
   final String _observacionesError = '';
   final bool _observacionesShowError = false;
 
-  String _optionId = 'Seleccione un Tipo de Foto...';
-  String _optionIdError = '';
-  bool _optionIdShowError = false;
+  final int _optionId = -1;
+  final String _optionIdError = '';
+  final bool _optionIdShowError = false;
 
-  final List<String> _options = [
-    'Propio-DNI-Frente',
-    'Propio-DNI-Dorso',
-    'Propio-Carnet-Frente',
-    'Propio-Carnet-Dorso',
-    'Propio-Cédula-Frente',
-    'Propio-Cédula-Dorso',
-    'Propio-Siniestro-Lateral Derecho',
-    'Propio-Siniestro-Lateral Izquierdo',
-    'Propio-Siniestro-Frente',
-    'Propio-Siniestro-Trasero',
-    'Tercero-DNI-Frente',
-    'Tercero-DNI-Dorso',
-    'Tercero-Carnet-Frente',
-    'Tercero-Carnet-Dorso',
-    'Tercero-Cédula-Frente',
-    'Tercero-Cédula-Dorso',
-    'Tercero-Seguro-Frente',
-    'Tercero-Seguro-Dorso',
-    'Tercero-Siniestro-Lateral Derecho',
-    'Tercero-Siniestro-Lateral Izquierdo',
-    'Tercero-Siniestro-Frente',
-    'Tercero-Siniestro-Trasero',
-  ];
+  bool apretado = false;
 
-  //---------------------------------------------------------------
   //----------------------- Pantalla ------------------------------
-  //---------------------------------------------------------------
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -83,7 +57,7 @@ class DisplayPicture4ScreenState extends State<DisplayPicture4Screen> {
                 ),
               ),
             ),
-            _showOptions(),
+
             _showObservaciones(),
             _showButtons(),
           ],
@@ -92,37 +66,7 @@ class DisplayPicture4ScreenState extends State<DisplayPicture4Screen> {
     );
   }
 
-  //---------------------------------------------------------------------
-  //----------------------- _showOptions --------------------------------
-  //---------------------------------------------------------------------
-
-  Widget _showOptions() {
-    return Container(
-      padding: const EdgeInsets.all(10),
-      child: DropdownButtonFormField(
-        initialValue: _optionId,
-        onChanged: (option) {
-          setState(() {
-            _optionId = option as String;
-          });
-        },
-        items: _getOptions(),
-        decoration: InputDecoration(
-          hintText: 'Seleccione un Tipo de Foto...',
-          labelText: '',
-          fillColor: Colors.white,
-          filled: true,
-          errorText: _optionIdShowError ? _optionIdError : null,
-          border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
-        ),
-      ),
-    );
-  }
-
-  //---------------------------------------------------------------------
-  //----------------------- _showButtons --------------------------------
-  //---------------------------------------------------------------------
-
+  //----------------------- _showButtons --------------------------
   Widget _showButtons() {
     return Container(
       margin: const EdgeInsets.all(10),
@@ -133,13 +77,15 @@ class DisplayPicture4ScreenState extends State<DisplayPicture4Screen> {
               style: ElevatedButton.styleFrom(
                 backgroundColor: const Color(0xFF120E43),
                 minimumSize: const Size(double.infinity, 50),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(5),
-                ),
               ),
-              onPressed: () {
-                _usePhoto();
-              },
+              onPressed: !apretado
+                  ? () {
+                      setState(() {
+                        apretado = true;
+                      });
+                      _usePhoto();
+                    }
+                  : null,
               child: const Text('Usar Foto'),
             ),
           ),
@@ -149,9 +95,6 @@ class DisplayPicture4ScreenState extends State<DisplayPicture4Screen> {
               style: ElevatedButton.styleFrom(
                 backgroundColor: const Color(0xFFE03B8B),
                 minimumSize: const Size(double.infinity, 50),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(5),
-                ),
               ),
               onPressed: () {
                 Navigator.pop(context);
@@ -164,10 +107,7 @@ class DisplayPicture4ScreenState extends State<DisplayPicture4Screen> {
     );
   }
 
-  //---------------------------------------------------------------------
-  //----------------------- _showObservaciones --------------------------
-  //---------------------------------------------------------------------
-
+  //----------------------- _showObservaciones --------------------
   Widget _showObservaciones() {
     return Container(
       padding: const EdgeInsets.all(10),
@@ -189,49 +129,26 @@ class DisplayPicture4ScreenState extends State<DisplayPicture4Screen> {
     );
   }
 
-  //---------------------------------------------------------------------
-  //----------------------- _usePhoto -----------------------------------
-  //---------------------------------------------------------------------
-
+  //----------------------- _usePhoto -----------------------------
   void _usePhoto() async {
-    if (_optionId == 'Seleccione un Tipo de Foto...') {
-      _optionIdShowError = true;
-      _optionIdError = 'Debe seleccionar un Tipo de Foto';
-      setState(() {});
-      return;
-    } else {
-      _optionIdShowError = false;
-      setState(() {});
-    }
+    Position? position = await getPosition(context);
 
-    if (_optionId == -1) {
-      return;
-    }
+    List<Placemark> placemarks = await placemarkFromCoordinates(
+      position!.latitude,
+      position.longitude,
+    );
 
-    PhotoSiniestro photo = PhotoSiniestro(
+    Photo photo = Photo(
       image: widget.image,
       tipofoto: _optionId,
       observaciones: _observaciones,
+      latitud: position.latitude,
+      longitud: position.longitude,
+      direccion: '${placemarks[0].street} - ${placemarks[0].locality}',
     );
+
     Response response = Response(isSuccess: true, result: photo);
+    Future.delayed(const Duration(milliseconds: 100));
     Navigator.pop(context, response);
-  }
-
-  //---------------------------------------------------------------------
-  //----------------------- _getOptions ---------------------------------
-  //---------------------------------------------------------------------
-
-  List<DropdownMenuItem<String>> _getOptions() {
-    List<DropdownMenuItem<String>> list = [];
-    list.add(
-      const DropdownMenuItem(
-        value: 'Seleccione un Tipo de Foto...',
-        child: Text('Seleccione un Tipo de Foto...'),
-      ),
-    );
-    for (var element in _options) {
-      list.add(DropdownMenuItem(value: element, child: Text(element)));
-    }
-    return list;
   }
 }

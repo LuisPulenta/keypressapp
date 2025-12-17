@@ -741,7 +741,7 @@ class ObraInfoScreenState extends State<ObraInfoScreen> {
       //_photoChanged = true;
       Response? response = await Navigator.of(context).push(
         MaterialPageRoute(
-          builder: (context) => DisplayPictureScreen(image: image2),
+          builder: (context) => DisplayPicture4Screen(image: image2),
         ),
       );
       if (response != null) {
