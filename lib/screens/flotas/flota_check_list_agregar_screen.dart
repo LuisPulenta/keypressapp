@@ -3283,13 +3283,9 @@ class _FlotaCheckListAgregarScreenState
       'IdCliente': _cliente,
       'IDVehiculo': _vehiculo.codveh,
       'VTV': _vtv.toString().substring(10, _vtv.toString().length),
-      'FechaVencVTV': _fechaVencVtv != null
-          ? _fechaVencVtv.toString().substring(0, 10)
-          : '',
+      'FechaVencVTV': _fechaVencVtv?.toString().substring(0, 10),
       'VTH': _vth.toString().substring(10, _vth.toString().length),
-      'FechaVencVTH': _fechaVencVth != null
-          ? _fechaVencVth.toString().substring(0, 10)
-          : '',
+      'FechaVencVTH': _fechaVencVth?.toString().substring(0, 10),
       'Cubiertas': _cubiertas.toString().substring(
         8,
         _cubiertas.toString().length,
@@ -3385,9 +3381,7 @@ class _FlotaCheckListAgregarScreenState
       'DNI': _documento,
       'ApellidoNombre': _nombreApellido,
       'Seguro': _seguro.toString().substring(10, _seguro.toString().length),
-      'FechaVencSeguro': _fechaVencSeguro != null
-          ? _fechaVencSeguro.toString().substring(0, 10)
-          : '',
+      'FechaVencSeguro': _fechaVencSeguro?.toString().substring(0, 10),
     };
 
     Response? response;

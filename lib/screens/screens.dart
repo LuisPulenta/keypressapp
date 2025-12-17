@@ -1,5 +1,6 @@
 export 'package:keypressapp/screens/candado/candado_screen.dart';
 export 'package:keypressapp/screens/compras/compras_screen.dart';
+export 'package:keypressapp/screens/flotas/display_picture4_screen.dart';
 export 'package:keypressapp/screens/flotas/flota_check_list_agregar_screen.dart';
 export 'package:keypressapp/screens/flotas/flota_check_list_fotos_screen.dart';
 export 'package:keypressapp/screens/flotas/flota_check_list_screen.dart';

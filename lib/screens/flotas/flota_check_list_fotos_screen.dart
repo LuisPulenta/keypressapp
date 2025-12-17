@@ -475,7 +475,7 @@ class _FlotaCheckListFotosScreenState extends State<FlotaCheckListFotosScreen> {
       _photoChanged = true;
       Response? response = await Navigator.of(context).push(
         MaterialPageRoute(
-          builder: (context) => DisplayPictureScreen(image: image2),
+          builder: (context) => DisplayPicture4Screen(image: image2),
         ),
       );
 
