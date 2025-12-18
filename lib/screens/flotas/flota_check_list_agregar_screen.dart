@@ -148,6 +148,7 @@ class _FlotaCheckListAgregarScreenState
       modulo: '',
       campomemo: '',
       habilitaChecklist: 0,
+      codigo: '',
     );
 
     _vehiculoVacio = Vehiculo(
@@ -171,6 +172,7 @@ class _FlotaCheckListAgregarScreenState
       modulo: '',
       campomemo: '',
       habilitaChecklist: 0,
+      codigo: '',
     );
 
     _causante = Causante(
@@ -3728,8 +3730,8 @@ class _FlotaCheckListAgregarScreenState
         decoration: InputDecoration(
           fillColor: Colors.white,
           filled: true,
-          hintText: 'Ingrese Patente...',
-          labelText: 'Patente:',
+          hintText: 'Ingrese Patente o Código...',
+          labelText: 'Patente o Código:',
           errorText: _codigoShowError ? _codigoError : null,
           prefixIcon: const Icon(Icons.badge),
           border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
@@ -3901,6 +3903,16 @@ class _FlotaCheckListAgregarScreenState
             mainAxisSize: MainAxisSize.min,
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
+              CustomRow(
+                icon: Icons.badge,
+                nombredato: 'Patente:',
+                dato: _gato(_vehiculo.numcha),
+              ),
+              CustomRow(
+                icon: Icons.badge,
+                nombredato: 'Código:',
+                dato: _gato(_vehiculo.codigo),
+              ),
               CustomRow(
                 icon: Icons.abc_outlined,
                 nombredato: 'Cód. Inventario:',

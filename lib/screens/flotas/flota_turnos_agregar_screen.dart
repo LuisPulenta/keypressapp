@@ -73,6 +73,7 @@ class _FlotaTurnosAgregarScreenState extends State<FlotaTurnosAgregarScreen> {
       modulo: '',
       campomemo: '',
       habilitaChecklist: 0,
+      codigo: '',
     );
     _loadData();
   }

@@ -87,6 +87,7 @@ class _FlotaCheckListScreenState extends State<FlotaCheckListScreen> {
     apellidoNombre: '',
     seguro: '',
     fechaVencSeguro: '',
+    codigo: '',
   );
 
   late VehiculosCheckList _checkListVacio;
@@ -273,6 +274,11 @@ class _FlotaCheckListScreenState extends State<FlotaCheckListScreen> {
                               ),
                               _RowCustom(
                                 anchoTitulo: anchoTitulo,
+                                titulo: 'Código:',
+                                dato: e.codigo!,
+                              ),
+                              _RowCustom(
+                                anchoTitulo: anchoTitulo,
                                 titulo: 'Descripción:',
                                 dato: e.descripcion!,
                               ),
@@ -412,6 +418,7 @@ class _FlotaCheckListScreenState extends State<FlotaCheckListScreen> {
           b.idCheckList.toString().toLowerCase(),
         );
       });
+      var a = 1;
     });
   }
 

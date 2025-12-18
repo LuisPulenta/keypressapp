@@ -19,28 +19,31 @@ class Vehiculo {
   String? modulo = '';
   String? campomemo = '';
   int? habilitaChecklist = 0;
+  String? codigo = '';
 
-  Vehiculo(
-      {required this.codveh,
-      required this.numcha,
-      required this.nrotar,
-      required this.codProducto,
-      required this.aniofa,
-      required this.descripcion,
-      required this.nmotor,
-      required this.chasis,
-      required this.fechaVencITV,
-      required this.nroPolizaSeguro,
-      required this.centroCosto,
-      required this.propiedadDe,
-      required this.telepase,
-      required this.kmhsactual,
-      required this.usaHoras,
-      required this.habilitado,
-      required this.fechaVencObleaGAS,
-      required this.modulo,
-      required this.campomemo,
-      required this.habilitaChecklist});
+  Vehiculo({
+    required this.codveh,
+    required this.numcha,
+    required this.nrotar,
+    required this.codProducto,
+    required this.aniofa,
+    required this.descripcion,
+    required this.nmotor,
+    required this.chasis,
+    required this.fechaVencITV,
+    required this.nroPolizaSeguro,
+    required this.centroCosto,
+    required this.propiedadDe,
+    required this.telepase,
+    required this.kmhsactual,
+    required this.usaHoras,
+    required this.habilitado,
+    required this.fechaVencObleaGAS,
+    required this.modulo,
+    required this.campomemo,
+    required this.habilitaChecklist,
+    required this.codigo,
+  });
 
   Vehiculo.fromJson(Map<String, dynamic> json) {
     codveh = json['codveh'];
@@ -63,6 +66,7 @@ class Vehiculo {
     modulo = json['modulo'];
     campomemo = json['campomemo'];
     habilitaChecklist = json['habilitaChecklist'];
+    codigo = json['codigo'];
   }
 
   Map<String, dynamic> toJson() {
@@ -87,6 +91,7 @@ class Vehiculo {
     data['modulo'] = modulo;
     data['campomemo'] = campomemo;
     data['habilitaChecklist'] = habilitaChecklist;
+    data['codigo'] = codigo;
     return data;
   }
 }

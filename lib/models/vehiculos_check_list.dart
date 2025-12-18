@@ -62,6 +62,7 @@ class VehiculosCheckList {
   String? apellidoNombre = '';
   String? seguro = '';
   String? fechaVencSeguro = '';
+  String? codigo = '';
 
   VehiculosCheckList({
     required this.idCheckList,
@@ -126,6 +127,7 @@ class VehiculosCheckList {
     required this.apellidoNombre,
     required this.seguro,
     required this.fechaVencSeguro,
+    required this.codigo,
   });
 
   VehiculosCheckList.fromJson(Map<String, dynamic> json) {
@@ -191,6 +193,7 @@ class VehiculosCheckList {
     apellidoNombre = json['apellidoNombre'];
     seguro = json['seguro'];
     fechaVencSeguro = json['fechaVencSeguro'];
+    codigo = json['codigo'] ?? '';
   }
 
   Map<String, dynamic> toJson() {
@@ -258,6 +261,7 @@ class VehiculosCheckList {
     data['apellidoNombre'] = apellidoNombre;
     data['seguro'] = seguro;
     data['fechaVencSeguro'] = fechaVencSeguro;
+    data['codigo'] = codigo;
 
     return data;
   }

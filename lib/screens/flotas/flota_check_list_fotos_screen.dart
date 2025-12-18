@@ -102,6 +102,7 @@ class _FlotaCheckListFotosScreenState extends State<FlotaCheckListFotosScreen> {
     apellidoNombre: '',
     seguro: '',
     fechaVencSeguro: '',
+    codigo: '',
   );
 
   late Photo _photo;
@@ -192,6 +193,11 @@ class _FlotaCheckListFotosScreenState extends State<FlotaCheckListFotosScreen> {
                             anchoTitulo: anchoTitulo,
                             titulo: 'Patente:',
                             dato: _vehiculosCheckList.numcha!,
+                          ),
+                          _RowCustom(
+                            anchoTitulo: anchoTitulo,
+                            titulo: 'Código:',
+                            dato: _vehiculosCheckList.codigo!,
                           ),
                           _RowCustom(
                             anchoTitulo: anchoTitulo,
