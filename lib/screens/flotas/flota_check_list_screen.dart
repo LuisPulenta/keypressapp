@@ -284,7 +284,7 @@ class _FlotaCheckListScreenState extends State<FlotaCheckListScreen> {
                               ),
                               _RowCustom(
                                 anchoTitulo: anchoTitulo,
-                                titulo: 'Cliente:',
+                                titulo: 'Cliente/asignado a:',
                                 dato: e.cliente!,
                               ),
                               _RowCustom(

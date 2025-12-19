@@ -3677,7 +3677,7 @@ class _FlotaCheckListAgregarScreenState
                         fillColor: Colors.white,
                         filled: true,
                         hintText: 'Elija un Cliente...',
-                        labelText: 'Cliente',
+                        labelText: 'Cliente/Asignado a',
                         errorText: _clienteShowError ? _clienteError : null,
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10),

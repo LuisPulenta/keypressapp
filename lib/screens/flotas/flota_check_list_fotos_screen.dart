@@ -206,7 +206,7 @@ class _FlotaCheckListFotosScreenState extends State<FlotaCheckListFotosScreen> {
                           ),
                           _RowCustom(
                             anchoTitulo: anchoTitulo,
-                            titulo: 'Cliente:',
+                            titulo: 'Cliente/Asignado a:',
                             dato: _vehiculosCheckList.cliente!,
                           ),
                           _RowCustom(
