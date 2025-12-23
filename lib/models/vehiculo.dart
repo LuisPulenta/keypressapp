@@ -46,8 +46,8 @@ class Vehiculo {
   });
 
   Vehiculo.fromJson(Map<String, dynamic> json) {
-    codveh = json['codveh'];
-    numcha = json['numcha'];
+    codveh = json['codveh'] ?? '';
+    numcha = json['numcha'] ?? '';
     nrotar = json['nrotar'];
     codProducto = json['codProducto'];
     aniofa = json['aniofa'];
@@ -66,7 +66,7 @@ class Vehiculo {
     modulo = json['modulo'];
     campomemo = json['campomemo'];
     habilitaChecklist = json['habilitaChecklist'];
-    codigo = json['codigo'];
+    codigo = json['codigo'] ?? '';
   }
 
   Map<String, dynamic> toJson() {

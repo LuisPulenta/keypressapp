@@ -3384,6 +3384,7 @@ class _FlotaCheckListAgregarScreenState
       'ApellidoNombre': _nombreApellido,
       'Seguro': _seguro.toString().substring(10, _seguro.toString().length),
       'FechaVencSeguro': _fechaVencSeguro?.toString().substring(0, 10),
+      'codigo': _vehiculo.codigo,
     };
 
     Response? response;
