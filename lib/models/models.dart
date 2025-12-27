@@ -7,6 +7,7 @@ export 'notification_user.dart';
 export 'obra.dart';
 export 'obras_documento.dart';
 export 'pepedido.dart';
+export 'pepedidodetalle.dart';
 export 'photo.dart';
 export 'preventivo.dart';
 export 'push_message.dart';

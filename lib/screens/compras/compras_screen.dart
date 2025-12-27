@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:intl/intl.dart';
 import 'package:keypressapp/providers/providers.dart';
+import 'package:keypressapp/screens/screens.dart';
+import 'package:keypressapp/utils/colors.dart';
 import 'package:provider/provider.dart';
 
 import '../../components/custom_error_dialog.dart';
@@ -277,7 +279,11 @@ class ComprasScreenState extends State<ComprasScreen> {
                                           style: const TextStyle(fontSize: 12),
                                         ),
                                       ),
-                                      const SizedBox(width: 20),
+                                    ],
+                                  ),
+
+                                  Row(
+                                    children: [
                                       const Text(
                                         'Importe Aprob.: ',
                                         style: TextStyle(
@@ -304,28 +310,54 @@ class ComprasScreenState extends State<ComprasScreen> {
                         ),
                       ),
                     ),
-                    Container(
-                      decoration: BoxDecoration(
-                        color: Colors.red,
-                        borderRadius: BorderRadius.circular(20),
-                      ),
-                      child: IconButton(
-                        onPressed: () async {
-                          bool result = await showConfirmDialog(
-                            context,
-                            title: 'Atención!',
-                            content:
-                                'Está seguro de firmar el Pedido N° ${e.nroPedido} de ${NumberFormat.currency(symbol: '\$').format(e.importeAprobados)}?',
-                          );
-                          if (result) {
-                            _firmarPedido(e.idfirma, e.nroPedido);
-                          }
-                        },
-                        icon: const FaIcon(
-                          FontAwesomeIcons.signature,
-                          color: Colors.white,
+                    Column(
+                      children: [
+                        Container(
+                          decoration: BoxDecoration(
+                            color: primaryColor,
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          child: IconButton(
+                            onPressed: () async {
+                              await Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) =>
+                                      CompraDetalleScreen(compra: e.nroPedido),
+                                ),
+                              );
+                            },
+                            icon: const FaIcon(
+                              FontAwesomeIcons.eye,
+                              color: Colors.white,
+                            ),
+                          ),
                         ),
-                      ),
+                        SizedBox(height: 5),
+                        Container(
+                          decoration: BoxDecoration(
+                            color: Colors.red,
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          child: IconButton(
+                            onPressed: () async {
+                              bool result = await showConfirmDialog(
+                                context,
+                                title: 'Atención!',
+                                content:
+                                    'Está seguro de firmar el Pedido N° ${e.nroPedido} de ${NumberFormat.currency(symbol: '\$').format(e.importeAprobados)}?',
+                              );
+                              if (result) {
+                                _firmarPedido(e.idfirma, e.nroPedido);
+                              }
+                            },
+                            icon: const FaIcon(
+                              FontAwesomeIcons.signature,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
                   ],
                 ),
