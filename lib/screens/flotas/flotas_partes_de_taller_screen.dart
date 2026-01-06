@@ -337,7 +337,7 @@ class FlotasPartesDeTallerScreenState
                             context,
                             title: 'Atención!',
                             content:
-                                'Está seguro de actualizar el la Orden de Trabajo N° ${e.numero}?',
+                                'Está seguro de marcar como Finalizado la Orden de Taller N° ${e.numero}?',
                           );
                           if (result) {
                             _actualizar(e.numero);
