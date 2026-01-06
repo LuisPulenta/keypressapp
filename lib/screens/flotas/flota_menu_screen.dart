@@ -105,6 +105,22 @@ class FlotaMenuScreen extends StatelessWidget {
               ),
             ),
           ),
+
+          const SizedBox(height: 5),
+          InkWell(
+            onTap: () async {
+              appRouter.push('/flotapartesdetaller');
+            },
+            child: SizedBox(
+              width: ancho,
+              child: const Boton(
+                icon: FontAwesomeIcons.gears,
+                texto: 'Partes de Taller',
+                color1: Color(0xff906EF5),
+                color2: Color.fromARGB(199, 216, 213, 213),
+              ),
+            ),
+          ),
         ],
       ),
     );

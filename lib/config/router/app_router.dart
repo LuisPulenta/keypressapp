@@ -171,6 +171,13 @@ final appRouter = GoRouter(
     ),
 
     GoRoute(
+      path: '/flotapartesdetaller',
+      builder: (context, state) {
+        return FlotasPartesDeTallerScreen();
+      },
+    ),
+
+    GoRoute(
       path: '/rrhh',
       builder: (context, state) {
         return RrhhScreen();
