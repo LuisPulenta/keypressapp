@@ -86,7 +86,7 @@ class FlotaMenuScreen extends StatelessWidget {
               width: ancho,
               child: const Boton(
                 icon: FontAwesomeIcons.gears,
-                texto: 'Partes de Taller',
+                texto: 'Ordenes de Taller',
                 color1: Color(0xff906EF5),
                 color2: Color.fromARGB(199, 216, 213, 213),
               ),
