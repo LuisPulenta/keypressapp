@@ -68,6 +68,7 @@ dependencies:
   flutter_local_notifications: ^19.4.2
   sqflite: ^2.0.2
   url_launcher: ^6.1.15 # Para llamar por teléfono
+  grouped_list: ^6.0.0
 
 dependency_overrides:
   dynamic_color: ^1.8.1

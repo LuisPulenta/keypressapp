@@ -526,6 +526,243 @@ class ApiHelper {
   }
 
   //---------------------------------------------------------------------------
+  static Future<Response> getClientes() async {
+    String apiUrl = Preferences.connection;
+    var url = Uri.parse('$apiUrl/api/Inspecciones/GetClientes');
+    var response = await http.get(
+      url,
+      headers: {
+        'content-type': 'application/json',
+        'accept': 'application/json',
+      },
+    );
+    var body = response.body;
+
+    if (response.statusCode >= 400) {
+      return Response(isSuccess: false, message: body);
+    }
+
+    List<Cliente> list = [];
+    var decodedJson = jsonDecode(body);
+    if (decodedJson != null) {
+      for (var item in decodedJson) {
+        list.add(Cliente.fromJson(item));
+      }
+    }
+    return Response(isSuccess: true, result: list);
+  }
+
+  //---------------------------------------------------------------------------
+  static Future<Response> getTiposTrabajos(int idcliente) async {
+    String apiUrl = Preferences.connection;
+    var url = Uri.parse('$apiUrl/api/Inspecciones/GetTiposTrabajos/$idcliente');
+    var response = await http.get(
+      url,
+      headers: {
+        'content-type': 'application/json',
+        'accept': 'application/json',
+      },
+    );
+    var body = response.body;
+
+    if (response.statusCode >= 400) {
+      return Response(isSuccess: false, message: body);
+    }
+
+    List<TiposTrabajo> list = [];
+    var decodedJson = jsonDecode(body);
+    if (decodedJson != null) {
+      for (var item in decodedJson) {
+        list.add(TiposTrabajo.fromJson(item));
+      }
+    }
+    return Response(isSuccess: true, result: list);
+  }
+
+  //---------------------------------------------------------------------------
+  static Future<Response> getGruposFormularios(
+    int idcliente,
+    int idtipotrabajo,
+  ) async {
+    String apiUrl = Preferences.connection;
+    var url = Uri.parse(
+      '$apiUrl/api/Inspecciones/GetGruposFormularios/$idcliente/$idtipotrabajo',
+    );
+
+    var response = await http.get(
+      url,
+      headers: {
+        'content-type': 'application/json',
+        'accept': 'application/json',
+      },
+    );
+    var body = response.body;
+
+    if (response.statusCode >= 400) {
+      return Response(isSuccess: false, message: body);
+    }
+
+    List<GruposFormulario> list = [];
+    var decodedJson = jsonDecode(body);
+    if (decodedJson != null) {
+      for (var item in decodedJson) {
+        list.add(GruposFormulario.fromJson(item));
+      }
+    }
+    return Response(isSuccess: true, result: list);
+  }
+
+  //---------------------------------------------------------------------------
+  static Future<Response> getDetallesFormularios(int idcliente) async {
+    String apiUrl = Preferences.connection;
+    var url = Uri.parse(
+      '$apiUrl/api/Inspecciones/GetDetallesFormularios/$idcliente',
+    );
+    var response = await http.get(
+      url,
+      headers: {
+        'content-type': 'application/json',
+        'accept': 'application/json',
+      },
+    );
+    var body = response.body;
+
+    if (response.statusCode >= 400) {
+      return Response(isSuccess: false, message: body);
+    }
+
+    List<DetallesFormulario> list = [];
+    var decodedJson = jsonDecode(body);
+    if (decodedJson != null) {
+      for (var item in decodedJson) {
+        list.add(DetallesFormulario.fromJson(item));
+      }
+    }
+    return Response(isSuccess: true, result: list);
+  }
+
+  //---------------------------------------------------------------------------
+  static Future<Response> getInspecciones(String codigo) async {
+    String apiUrl = Preferences.connection;
+    var url = Uri.parse('$apiUrl/api/Inspecciones/GetInspecciones/$codigo');
+    var response = await http.post(
+      url,
+      headers: {
+        'content-type': 'application/json',
+        'accept': 'application/json',
+      },
+    );
+    var body = response.body;
+
+    if (response.statusCode >= 400) {
+      return Response(isSuccess: false, message: body);
+    }
+
+    List<VistaInspeccion> list = [];
+    var decodedJson = jsonDecode(body);
+    if (decodedJson != null) {
+      for (var item in decodedJson) {
+        list.add(VistaInspeccion.fromJson(item));
+      }
+    }
+    return Response(isSuccess: true, result: list);
+  }
+
+  //---------------------------------------------------------------------------
+  static Future<Response> getDetallesInspecciones(int codigo) async {
+    String apiUrl = Preferences.connection;
+    var url = Uri.parse(
+      '$apiUrl/api/Inspecciones/GetDetallesInspecciones/$codigo',
+    );
+    var response = await http.get(
+      url,
+      headers: {
+        'content-type': 'application/json',
+        'accept': 'application/json',
+      },
+    );
+    var body = response.body;
+
+    if (response.statusCode >= 400) {
+      return Response(isSuccess: false, message: body);
+    }
+
+    List<InspeccionDetalle> list = [];
+    var decodedJson = jsonDecode(body);
+    if (decodedJson != null) {
+      for (var item in decodedJson) {
+        list.add(InspeccionDetalle.fromJson(item));
+      }
+    }
+    return Response(isSuccess: true, result: list);
+  }
+
+  //---------------------------------------------------------------------------
+  static Future<Response> getObraInspeccion(int codigo) async {
+    String apiUrl = Preferences.connection;
+    var url = Uri.parse('$apiUrl/api/Inspecciones/GetObra/$codigo');
+    var response = await http.get(
+      url,
+      headers: {
+        'content-type': 'application/json',
+        'accept': 'application/json',
+      },
+    );
+    var body = response.body;
+
+    if (response.statusCode >= 400) {
+      return Response(isSuccess: false, message: body);
+    }
+
+    var decodedJson = jsonDecode(body);
+    return Response(isSuccess: true, result: Obra.fromJson(decodedJson));
+  }
+
+  //---------------------------------------------------------------------------
+  static Future<Response> getInspeccion(int codigo) async {
+    String apiUrl = Preferences.connection;
+    var url = Uri.parse('$apiUrl/api/Inspecciones/GetInspeccion/$codigo');
+    var response = await http.get(
+      url,
+      headers: {
+        'content-type': 'application/json',
+        'accept': 'application/json',
+      },
+    );
+    var body = response.body;
+
+    if (response.statusCode >= 400) {
+      return Response(isSuccess: false, message: body);
+    }
+
+    var decodedJson = jsonDecode(body);
+    return Response(isSuccess: true, result: Inspeccion.fromJson(decodedJson));
+  }
+
+  //---------------------------------------------------------------------------
+  static Future<Response> postInspeccionDetalle(
+    String controller,
+    Map<String, dynamic> request,
+  ) async {
+    String apiUrl = Preferences.connection;
+    var url = Uri.parse('$apiUrl$controller');
+    var response = await http.post(
+      url,
+      headers: {
+        'content-type': 'application/json',
+        'accept': 'application/json',
+      },
+      body: jsonEncode(request),
+    );
+
+    if (response.statusCode >= 400) {
+      return Response(isSuccess: false, message: response.body);
+    }
+
+    return Response(isSuccess: true, result: response.body);
+  }
+
+  //---------------------------------------------------------------------------
   static Future<Response> getClientes2() async {
     String apiUrl = Preferences.connection;
     var url = Uri.parse('$apiUrl/api/Clientes/GetClientes');

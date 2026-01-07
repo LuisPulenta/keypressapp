@@ -180,7 +180,7 @@ final appRouter = GoRouter(
     GoRoute(
       path: '/rrhh',
       builder: (context, state) {
-        return RrhhScreen();
+        return RrhhMenuScreen();
       },
     ),
 
