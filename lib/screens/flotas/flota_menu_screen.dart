@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:keypressapp/config/router/app_router.dart';
 
+import '../../utils/colors.dart';
 import '../../widgets/widgets.dart';
 
 class FlotaMenuScreen extends StatelessWidget {
@@ -52,11 +53,11 @@ class FlotaMenuScreen extends StatelessWidget {
             },
             child: SizedBox(
               width: ancho,
-              child: const Boton(
+              child: Boton(
                 icon: FontAwesomeIcons.carBurst,
                 texto: 'Siniestros',
-                color1: Color(0xff906EF5),
-                color2: Color.fromARGB(199, 216, 213, 213),
+                color1: flotaColor1,
+                color2: flotaColor2,
               ),
             ),
           ),
@@ -68,11 +69,11 @@ class FlotaMenuScreen extends StatelessWidget {
             },
             child: SizedBox(
               width: ancho,
-              child: const Boton(
+              child: Boton(
                 icon: FontAwesomeIcons.listCheck,
                 texto: 'Check List',
-                color1: Color(0xff6989F5),
-                color2: Color.fromARGB(200, 104, 101, 101),
+                color1: flotaColor2,
+                color2: flotaColor1,
               ),
             ),
           ),
@@ -84,11 +85,11 @@ class FlotaMenuScreen extends StatelessWidget {
             },
             child: SizedBox(
               width: ancho,
-              child: const Boton(
+              child: Boton(
                 icon: FontAwesomeIcons.gears,
                 texto: 'Ordenes de Taller',
-                color1: Color(0xff906EF5),
-                color2: Color.fromARGB(199, 216, 213, 213),
+                color1: flotaColor1,
+                color2: flotaColor2,
               ),
             ),
           ),
@@ -100,11 +101,11 @@ class FlotaMenuScreen extends StatelessWidget {
             },
             child: SizedBox(
               width: ancho,
-              child: const Boton(
+              child: Boton(
                 icon: FontAwesomeIcons.wrench,
                 texto: 'Turnos Taller',
-                color1: Color.fromARGB(200, 104, 101, 101),
-                color2: Color(0xff6989F5),
+                color1: flotaColor2,
+                color2: flotaColor1,
               ),
             ),
           ),
@@ -117,11 +118,11 @@ class FlotaMenuScreen extends StatelessWidget {
             },
             child: SizedBox(
               width: ancho,
-              child: const Boton(
+              child: Boton(
                 icon: FontAwesomeIcons.toolbox, //Icons.taxi_alert
                 texto: 'Km. y Preventivos',
-                color1: Color(0xff906EF5),
-                color2: Color.fromARGB(199, 216, 213, 213),
+                color1: flotaColor1,
+                color2: flotaColor2,
               ),
             ),
           ),

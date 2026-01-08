@@ -5,6 +5,7 @@ import 'package:keypressapp/providers/providers.dart';
 import 'package:provider/provider.dart';
 
 import '../../models/user.dart';
+import '../../utils/colors.dart';
 import '../../widgets/widgets.dart';
 
 class ObrasMenuScreen extends StatelessWidget {
@@ -57,11 +58,11 @@ class ObrasMenuScreen extends StatelessWidget {
             },
             child: SizedBox(
               width: ancho,
-              child: const Boton(
+              child: Boton(
                 icon: FontAwesomeIcons.personDigging,
                 texto: 'Gestión de Obras',
-                color1: Color.fromARGB(255, 51, 7, 7),
-                color2: Color.fromARGB(255, 85, 51, 67),
+                color1: obrasColor1,
+                color2: obrasColor2,
               ),
             ),
           ),
@@ -72,11 +73,11 @@ class ObrasMenuScreen extends StatelessWidget {
             },
             child: SizedBox(
               width: ancho,
-              child: const Boton(
+              child: Boton(
                 icon: FontAwesomeIcons.mapPin,
                 texto: 'Relevamientos',
-                color1: Color.fromARGB(255, 91, 19, 19),
-                color2: Color.fromARGB(255, 149, 93, 119),
+                color1: obrasColor2,
+                color2: obrasColor1,
               ),
             ),
           ),

@@ -343,6 +343,7 @@ class FlotasPartesDeTallerScreenState
                             _actualizar(e.numero);
                           }
                         },
+
                         icon: const FaIcon(
                           FontAwesomeIcons.flagCheckered,
                           color: Colors.white,

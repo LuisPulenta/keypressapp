@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:keypressapp/config/router/app_router.dart';
 
+import '../../utils/colors.dart';
 import '../../widgets/widgets.dart';
 
 class RrhhMenuScreen extends StatelessWidget {
@@ -52,11 +53,11 @@ class RrhhMenuScreen extends StatelessWidget {
             },
             child: SizedBox(
               width: ancho,
-              child: const Boton(
+              child: Boton(
                 icon: FontAwesomeIcons.clipboardQuestion,
                 texto: 'Inspecciones',
-                color1: Color.fromARGB(255, 8, 67, 1),
-                color2: Color.fromARGB(198, 101, 234, 65),
+                color1: rrhhColor1,
+                color2: rrhhColor2,
               ),
             ),
           ),

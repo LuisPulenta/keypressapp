@@ -9,6 +9,7 @@ import 'package:provider/provider.dart';
 
 import '../../config/theme/app_theme.dart';
 import '../../helpers/api_helper.dart';
+import '../../utils/colors.dart';
 import '../../widgets/widgets.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -118,11 +119,11 @@ class _HomeScreenState extends State<HomeScreen> {
                     icon: FontAwesomeIcons.personDigging,
                     texto: 'Obras',
                     color1: empresa!.habilitaObras == 1
-                        ? const Color.fromARGB(255, 51, 7, 7)
-                        : const Color.fromARGB(200, 104, 101, 101),
+                        ? obrasColor1
+                        : disabledColor1,
                     color2: empresa!.habilitaObras == 1
-                        ? const Color.fromARGB(255, 85, 51, 67)
-                        : const Color.fromARGB(199, 216, 213, 213),
+                        ? obrasColor2
+                        : disabledColor2,
                   ),
                 ),
               ),
@@ -145,14 +146,14 @@ class _HomeScreenState extends State<HomeScreen> {
                         empresa!.habilitaCompras == 1 &&
                             user!.estadoInv == true &&
                             user!.compras == true
-                        ? const Color.fromARGB(255, 226, 105, 245)
-                        : const Color.fromARGB(200, 104, 101, 101),
+                        ? comprasColor1
+                        : disabledColor1,
                     color2:
                         empresa!.habilitaCompras == 1 &&
                             user!.estadoInv == true &&
                             user!.compras == true
-                        ? const Color.fromARGB(255, 228, 177, 201)
-                        : const Color.fromARGB(199, 216, 213, 213),
+                        ? comprasColor2
+                        : disabledColor2,
                   ),
                 ),
               ),
@@ -194,11 +195,11 @@ class _HomeScreenState extends State<HomeScreen> {
                     icon: FontAwesomeIcons.car,
                     texto: 'Flota',
                     color1: empresa!.habilitaFlotas == 1
-                        ? const Color(0xff6989F5)
-                        : const Color.fromARGB(200, 104, 101, 101),
+                        ? flotaColor1
+                        : disabledColor1,
                     color2: empresa!.habilitaFlotas == 1
-                        ? const Color(0xff906EF5)
-                        : const Color.fromARGB(199, 216, 213, 213),
+                        ? flotaColor2
+                        : disabledColor2,
                   ),
                 ),
               ),
@@ -219,11 +220,11 @@ class _HomeScreenState extends State<HomeScreen> {
                     icon: FontAwesomeIcons.peopleArrows,
                     texto: 'RR.HH.',
                     color1: empresa!.habilitaRRHH == 1
-                        ? const Color.fromARGB(255, 9, 238, 185)
-                        : const Color.fromARGB(200, 104, 101, 101),
+                        ? rrhhColor1
+                        : disabledColor1,
                     color2: empresa!.habilitaRRHH == 1
-                        ? const Color.fromARGB(255, 141, 231, 192)
-                        : const Color.fromARGB(199, 216, 213, 213),
+                        ? rrhhColor2
+                        : disabledColor2,
                   ),
                 ),
               ),
