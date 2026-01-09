@@ -454,6 +454,8 @@ class _LoginScreenState extends State<LoginScreen> {
   void _login() async {
     FocusScope.of(context).unfocus(); //Oculta el teclado
 
+    await _getEmpresa();
+
     if (!hayImei()) {
       initPlatformState();
       return;

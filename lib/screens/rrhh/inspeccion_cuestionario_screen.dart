@@ -11,6 +11,7 @@ import 'package:keypressapp/components/components.dart';
 import 'package:keypressapp/helpers/helpers.dart';
 import 'package:keypressapp/models/models.dart';
 
+import '../../utils/colors.dart';
 import '../screens.dart';
 
 class InspeccionCuestionarioScreen extends StatefulWidget {
@@ -124,7 +125,7 @@ class _InspeccionCuestionarioScreenState
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 195, 191, 191),
+      backgroundColor: Colors.white,
       appBar: AppBar(
         title: const Text('Cuestionario'),
         centerTitle: true,
@@ -225,7 +226,7 @@ class _InspeccionCuestionarioScreenState
                     widget.detallesFormulariosCompleto.length.toString(),
                     style: const TextStyle(
                       fontSize: 14,
-                      color: Colors.blue,
+                      color: primaryColor,
                       fontWeight: FontWeight.normal,
                     ),
                   ),
@@ -245,7 +246,7 @@ class _InspeccionCuestionarioScreenState
                     respSI.toString(),
                     style: const TextStyle(
                       fontSize: 14,
-                      color: Colors.blue,
+                      color: primaryColor,
                       fontWeight: FontWeight.normal,
                     ),
                   ),
@@ -270,7 +271,7 @@ class _InspeccionCuestionarioScreenState
                         .toString(),
                     style: const TextStyle(
                       fontSize: 14,
-                      color: Colors.blue,
+                      color: primaryColor,
                       fontWeight: FontWeight.normal,
                     ),
                   ),
@@ -296,7 +297,7 @@ class _InspeccionCuestionarioScreenState
                     respTXT.toString(),
                     style: const TextStyle(
                       fontSize: 14,
-                      color: Colors.blue,
+                      color: primaryColor,
                       fontWeight: FontWeight.normal,
                     ),
                   ),
@@ -316,7 +317,7 @@ class _InspeccionCuestionarioScreenState
                     respNO.toString(),
                     style: const TextStyle(
                       fontSize: 14,
-                      color: Colors.blue,
+                      color: primaryColor,
                       fontWeight: FontWeight.normal,
                     ),
                   ),
@@ -342,7 +343,7 @@ class _InspeccionCuestionarioScreenState
                     "",
                     style: TextStyle(
                       fontSize: 14,
-                      color: Colors.blue,
+                      color: primaryColor,
                       fontWeight: FontWeight.normal,
                     ),
                   ),
@@ -362,7 +363,7 @@ class _InspeccionCuestionarioScreenState
                     respNA.toString(),
                     style: const TextStyle(
                       fontSize: 14,
-                      color: Colors.blue,
+                      color: primaryColor,
                       fontWeight: FontWeight.normal,
                     ),
                   ),
@@ -382,7 +383,7 @@ class _InspeccionCuestionarioScreenState
                     puntos.toString(),
                     style: const TextStyle(
                       fontSize: 14,
-                      color: Colors.blue,
+                      color: primaryColor,
                       fontWeight: FontWeight.normal,
                     ),
                   ),
@@ -435,6 +436,8 @@ class _InspeccionCuestionarioScreenState
                           vertical: 5.0,
                         ),
                         leading: CircleAvatar(
+                          backgroundColor: primaryColor,
+                          foregroundColor: Colors.white,
                           child: Text(
                             element['detallef'],
                             style: const TextStyle(fontSize: 10),
@@ -836,7 +839,7 @@ class _InspeccionCuestionarioScreenState
                                   },
                                   icon: const Icon(
                                     Icons.loop,
-                                    color: Colors.blue,
+                                    color: primaryColor,
                                   ),
                                 ),
                               ],
@@ -1282,7 +1285,7 @@ class _InspeccionCuestionarioScreenState
                                   },
                                   icon: const Icon(
                                     Icons.loop,
-                                    color: Colors.blue,
+                                    color: primaryColor,
                                   ),
                                 ),
                               ],

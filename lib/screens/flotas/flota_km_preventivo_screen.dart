@@ -855,7 +855,7 @@ class FlotaKmPreventivoScreen extends StatelessWidget {
 //                                       'Descripción: ',
 //                                       style: TextStyle(
 //                                         fontSize: 12,
-//                                         color: Color(0xFF781f1e),
+//                                         color: primaryColor,
 //                                         fontWeight: FontWeight.bold,
 //                                       ),
 //                                     ),
@@ -877,7 +877,7 @@ class FlotaKmPreventivoScreen extends StatelessWidget {
 //                                       '',
 //                                       style: TextStyle(
 //                                         fontSize: 12,
-//                                         color: Color(0xFF781f1e),
+//                                         color: primaryColor,
 //                                         fontWeight: FontWeight.bold,
 //                                       ),
 //                                     ),
@@ -899,7 +899,7 @@ class FlotaKmPreventivoScreen extends StatelessWidget {
 //                                       'Unid. Med.: ',
 //                                       style: TextStyle(
 //                                         fontSize: 12,
-//                                         color: Color(0xFF781f1e),
+//                                         color: primaryColor,
 //                                         fontWeight: FontWeight.bold,
 //                                       ),
 //                                     ),
@@ -921,7 +921,7 @@ class FlotaKmPreventivoScreen extends StatelessWidget {
 //                                       'Frecuencia.: ',
 //                                       style: TextStyle(
 //                                         fontSize: 12,
-//                                         color: Color(0xFF781f1e),
+//                                         color: primaryColor,
 //                                         fontWeight: FontWeight.bold,
 //                                       ),
 //                                     ),
@@ -943,7 +943,7 @@ class FlotaKmPreventivoScreen extends StatelessWidget {
 //                                       'Fecha Ult. Ej.: ',
 //                                       style: TextStyle(
 //                                         fontSize: 12,
-//                                         color: Color(0xFF781f1e),
+//                                         color: primaryColor,
 //                                         fontWeight: FontWeight.bold,
 //                                       ),
 //                                     ),
@@ -976,7 +976,7 @@ class FlotaKmPreventivoScreen extends StatelessWidget {
 //                                       'Km Ult. Ej.: ',
 //                                       style: TextStyle(
 //                                         fontSize: 12,
-//                                         color: Color(0xFF781f1e),
+//                                         color: primaryColor,
 //                                         fontWeight: FontWeight.bold,
 //                                       ),
 //                                     ),
@@ -998,7 +998,7 @@ class FlotaKmPreventivoScreen extends StatelessWidget {
 //                                       'Km actual: ',
 //                                       style: TextStyle(
 //                                         fontSize: 12,
-//                                         color: Color(0xFF781f1e),
+//                                         color: primaryColor,
 //                                         fontWeight: FontWeight.bold,
 //                                       ),
 //                                     ),
@@ -1027,7 +1027,7 @@ class FlotaKmPreventivoScreen extends StatelessWidget {
 //                                       'Diferencia: ',
 //                                       style: TextStyle(
 //                                         fontSize: 12,
-//                                         color: Color(0xFF781f1e),
+//                                         color: primaryColor,
 //                                         fontWeight: FontWeight.bold,
 //                                       ),
 //                                     ),
@@ -1049,7 +1049,7 @@ class FlotaKmPreventivoScreen extends StatelessWidget {
 //                                       'Estado: ',
 //                                       style: TextStyle(
 //                                         fontSize: 12,
-//                                         color: Color(0xFF781f1e),
+//                                         color: primaryColor,
 //                                         fontWeight: FontWeight.bold,
 //                                       ),
 //                                     ),

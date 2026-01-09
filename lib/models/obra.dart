@@ -8,7 +8,7 @@ class Obra {
   String central = '';
   String elempep = '';
   String? observaciones = '';
-  int finalizada = 0;
+  int? finalizada = 0;
   String? supervisore = '';
   String? codigoEstado = '';
   String? codigoSubEstado = '';
@@ -17,7 +17,7 @@ class Obra {
   List<ObrasDocumento> obrasDocumentos = [];
   String? fechaCierreElectrico = '';
   String? fechaUltimoMovimiento = '';
-  int photos = 0;
+  int? photos = 0;
   String? posx = '';
   String? posy = '';
   String? direccion = '';
@@ -30,35 +30,36 @@ class Obra {
   String? planos = '';
   String? grupoCausante = '';
 
-  Obra(
-      {required this.nroObra,
-      required this.nombreObra,
-      required this.nroOE,
-      required this.defProy,
-      required this.central,
-      required this.elempep,
-      required this.observaciones,
-      required this.finalizada,
-      required this.supervisore,
-      required this.codigoEstado,
-      required this.codigoSubEstado,
-      required this.modulo,
-      required this.grupoAlmacen,
-      required this.obrasDocumentos,
-      required this.fechaCierreElectrico,
-      required this.fechaUltimoMovimiento,
-      required this.photos,
-      required this.posx,
-      required this.posy,
-      required this.direccion,
-      required this.textoLocalizacion,
-      required this.textoClase,
-      required this.textoTipo,
-      required this.textoComponente,
-      required this.codigoDiametro,
-      required this.motivo,
-      required this.planos,
-      required this.grupoCausante});
+  Obra({
+    required this.nroObra,
+    required this.nombreObra,
+    required this.nroOE,
+    required this.defProy,
+    required this.central,
+    required this.elempep,
+    required this.observaciones,
+    required this.finalizada,
+    required this.supervisore,
+    required this.codigoEstado,
+    required this.codigoSubEstado,
+    required this.modulo,
+    required this.grupoAlmacen,
+    required this.obrasDocumentos,
+    required this.fechaCierreElectrico,
+    required this.fechaUltimoMovimiento,
+    required this.photos,
+    required this.posx,
+    required this.posy,
+    required this.direccion,
+    required this.textoLocalizacion,
+    required this.textoClase,
+    required this.textoTipo,
+    required this.textoComponente,
+    required this.codigoDiametro,
+    required this.motivo,
+    required this.planos,
+    required this.grupoCausante,
+  });
 
   Obra.fromJson(Map<String, dynamic> json) {
     nroObra = json['nroObra'];
@@ -68,7 +69,7 @@ class Obra {
     central = json['central'] ?? '';
     elempep = json['elempep'];
     observaciones = json['observaciones'];
-    finalizada = json['finalizada'];
+    finalizada = json['finalizada'] ?? 0;
     supervisore = json['supervisore'];
     codigoEstado = json['codigoEstado'];
     codigoSubEstado = json['codigoSubEstado'];
@@ -82,7 +83,7 @@ class Obra {
     }
     fechaCierreElectrico = json['fechaCierreElectrico'];
     fechaUltimoMovimiento = json['fechaUltimoMovimiento'];
-    photos = json['photos'];
+    photos = json['photos'] ?? 0;
     posx = json['posx'];
     posy = json['posy'];
     direccion = json['direccion'];

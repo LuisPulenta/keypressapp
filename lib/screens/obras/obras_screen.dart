@@ -13,7 +13,8 @@ import '../widgets/list_count.dart';
 import '../widgets/no_content.dart';
 
 class ObrasScreen extends StatefulWidget {
-  const ObrasScreen({super.key});
+  final int opcion;
+  const ObrasScreen({super.key, required this.opcion});
 
   @override
   _ObrasScreenState createState() => _ObrasScreenState();
@@ -451,15 +452,20 @@ class _ObrasScreenState extends State<ObrasScreen> {
   void _goInfoObra(Obra obra) async {
     final appStateProvider = context.read<AppStateProvider>();
     User user = appStateProvider.user;
-    String? result = await Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (context) => ObraInfoScreen(user: user, obra: obra),
-      ),
-    );
-    if (result == 'yes' || result != 'yes') {
-      _getObras();
-      setState(() {});
+    if (widget.opcion == 1) {
+      String? result = await Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => ObraInfoScreen(user: user, obra: obra),
+        ),
+      );
+      if (result == 'yes' || result != 'yes') {
+        _getObras();
+        setState(() {});
+      }
+    }
+    if (widget.opcion == 2) {
+      Navigator.pop(context, obra);
     }
   }
 }

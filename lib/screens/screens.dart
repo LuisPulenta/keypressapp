@@ -37,6 +37,7 @@ export 'package:keypressapp/screens/rrhh/display_picture3_screen.dart';
 export 'package:keypressapp/screens/rrhh/inspeccion_cuestionario_duplicado_screen.dart';
 export 'package:keypressapp/screens/rrhh/inspeccion_cuestionario_screen.dart';
 export 'package:keypressapp/screens/rrhh/inspeccion_duplicar_screen.dart';
+export 'package:keypressapp/screens/rrhh/inspecciones_lista_screen.dart';
 export 'package:keypressapp/screens/rrhh/inspecciones_screen.dart';
 export 'package:keypressapp/screens/rrhh/rrhh_menu_screen.dart';
 export 'package:keypressapp/screens/rrhh/take_picturec.dart';

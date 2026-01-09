@@ -4,11 +4,11 @@ import 'package:flutter/material.dart';
 import 'package:geocoding/geocoding.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:intl/intl.dart';
+import 'package:keypressapp/utils/colors.dart';
 
 import '../../components/loader_component.dart';
 import '../../helpers/helpers.dart';
 import '../../models/models.dart';
-import '../../widgets/widgets.dart';
 import '../screens.dart';
 import '../widgets/customrow.dart';
 
@@ -254,7 +254,7 @@ class _InspeccionDuplicarScreenState extends State<InspeccionDuplicarScreen> {
                               'Fecha: ',
                               style: TextStyle(
                                 fontSize: 12,
-                                color: Color(0xFF781f1e),
+                                color: primaryColor,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
@@ -266,7 +266,7 @@ class _InspeccionDuplicarScreenState extends State<InspeccionDuplicarScreen> {
                               'Empleado: ',
                               style: TextStyle(
                                 fontSize: 12,
-                                color: Color(0xFF781f1e),
+                                color: primaryColor,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
@@ -278,7 +278,7 @@ class _InspeccionDuplicarScreenState extends State<InspeccionDuplicarScreen> {
                               'Cliente: ',
                               style: TextStyle(
                                 fontSize: 12,
-                                color: Color(0xFF781f1e),
+                                color: primaryColor,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
@@ -290,7 +290,7 @@ class _InspeccionDuplicarScreenState extends State<InspeccionDuplicarScreen> {
                               'Tipo Trabajo: ',
                               style: TextStyle(
                                 fontSize: 12,
-                                color: Color(0xFF781f1e),
+                                color: primaryColor,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
@@ -302,7 +302,7 @@ class _InspeccionDuplicarScreenState extends State<InspeccionDuplicarScreen> {
                               'Obra: ',
                               style: TextStyle(
                                 fontSize: 12,
-                                color: Color(0xFF781f1e),
+                                color: primaryColor,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
@@ -314,7 +314,7 @@ class _InspeccionDuplicarScreenState extends State<InspeccionDuplicarScreen> {
                               'Total Preguntas: ',
                               style: TextStyle(
                                 fontSize: 12,
-                                color: Color(0xFF781f1e),
+                                color: primaryColor,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
@@ -326,7 +326,7 @@ class _InspeccionDuplicarScreenState extends State<InspeccionDuplicarScreen> {
                               'Respuestas NO: ',
                               style: TextStyle(
                                 fontSize: 12,
-                                color: Color(0xFF781f1e),
+                                color: primaryColor,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
@@ -338,7 +338,7 @@ class _InspeccionDuplicarScreenState extends State<InspeccionDuplicarScreen> {
                               'Total Puntos: ',
                               style: TextStyle(
                                 fontSize: 12,
-                                color: Color(0xFF781f1e),
+                                color: primaryColor,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
@@ -452,10 +452,10 @@ class _InspeccionDuplicarScreenState extends State<InspeccionDuplicarScreen> {
       child: TextField(
         keyboardType: TextInputType.emailAddress,
         decoration: InputDecoration(
-          iconColor: const Color(0xFF781f1e),
-          prefixIconColor: const Color(0xFF781f1e),
-          hoverColor: const Color(0xFF781f1e),
-          focusColor: const Color(0xFF781f1e),
+          iconColor: primaryColor,
+          prefixIconColor: primaryColor,
+          hoverColor: primaryColor,
+          focusColor: primaryColor,
           fillColor: Colors.white,
           filled: true,
           hintText: 'Ingrese Legajo o Documento del empleado...',
@@ -463,7 +463,7 @@ class _InspeccionDuplicarScreenState extends State<InspeccionDuplicarScreen> {
           errorText: _codigoShowError ? _codigoError : null,
           prefixIcon: const Icon(Icons.badge),
           border: OutlineInputBorder(
-            borderSide: const BorderSide(color: Color(0xFF781f1e)),
+            borderSide: const BorderSide(color: primaryColor),
             borderRadius: BorderRadius.circular(10),
           ),
         ),
@@ -487,7 +487,7 @@ class _InspeccionDuplicarScreenState extends State<InspeccionDuplicarScreen> {
           Expanded(
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
-                backgroundColor: const Color(0xFF781f1e),
+                backgroundColor: primaryColor,
                 minimumSize: const Size(double.infinity, 50),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(5),
@@ -709,7 +709,7 @@ class _InspeccionDuplicarScreenState extends State<InspeccionDuplicarScreen> {
           Expanded(
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
-                backgroundColor: const Color(0xFF781f1e),
+                backgroundColor: primaryColor,
                 minimumSize: const Size(double.infinity, 50),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(5),

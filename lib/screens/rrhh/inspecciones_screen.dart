@@ -3,6 +3,9 @@ import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:geocoding/geocoding.dart';
 import 'package:geolocator/geolocator.dart';
+import 'package:keypressapp/providers/providers.dart';
+import 'package:keypressapp/utils/colors.dart';
+import 'package:provider/provider.dart';
 
 import '../../helpers/helpers.dart';
 import '../../models/models.dart';
@@ -10,13 +13,7 @@ import '../screens.dart';
 import '../widgets/customrow.dart';
 
 class InspeccionesScreen extends StatefulWidget {
-  final User user;
-  final Position positionUser;
-  const InspeccionesScreen({
-    super.key,
-    required this.user,
-    required this.positionUser,
-  });
+  const InspeccionesScreen({super.key});
 
   @override
   _InspeccionesScreenState createState() => _InspeccionesScreenState();
@@ -231,10 +228,10 @@ class _InspeccionesScreenState extends State<InspeccionesScreen> {
       child: TextField(
         keyboardType: TextInputType.emailAddress,
         decoration: InputDecoration(
-          iconColor: const Color(0xFF781f1e),
-          prefixIconColor: const Color(0xFF781f1e),
-          hoverColor: const Color(0xFF781f1e),
-          focusColor: const Color(0xFF781f1e),
+          iconColor: primaryColor,
+          prefixIconColor: primaryColor,
+          hoverColor: primaryColor,
+          focusColor: primaryColor,
           fillColor: Colors.white,
           filled: true,
           hintText: 'Ingrese Legajo o Documento del empleado...',
@@ -242,7 +239,7 @@ class _InspeccionesScreenState extends State<InspeccionesScreen> {
           errorText: _codigoShowError ? _codigoError : null,
           prefixIcon: const Icon(Icons.badge),
           border: OutlineInputBorder(
-            borderSide: const BorderSide(color: Color(0xFF781f1e)),
+            borderSide: const BorderSide(color: primaryColor),
             borderRadius: BorderRadius.circular(10),
           ),
         ),
@@ -266,7 +263,7 @@ class _InspeccionesScreenState extends State<InspeccionesScreen> {
           Expanded(
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
-                backgroundColor: const Color(0xFF781f1e),
+                backgroundColor: primaryColor,
                 minimumSize: const Size(double.infinity, 50),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(5),
@@ -294,7 +291,7 @@ class _InspeccionesScreenState extends State<InspeccionesScreen> {
           Expanded(
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
-                backgroundColor: const Color(0xFF781f1e),
+                backgroundColor: primaryColor,
                 minimumSize: const Size(double.infinity, 50),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(5),
@@ -495,7 +492,7 @@ class _InspeccionesScreenState extends State<InspeccionesScreen> {
       children: [
         Expanded(
           child: Container(
-            padding: const EdgeInsets.only(left: 10, right: 10, top: 5),
+            padding: const EdgeInsets.only(left: 10, right: 10, top: 10),
             child: _clientes.isEmpty
                 ? Row(
                     children: const [
@@ -504,7 +501,7 @@ class _InspeccionesScreenState extends State<InspeccionesScreen> {
                       Text('Cargando Clientes...'),
                     ],
                   )
-                : DropdownButtonFormField(
+                : DropdownButtonFormField<int>(
                     initialValue: _cliente,
                     decoration: InputDecoration(
                       fillColor: Colors.white,
@@ -513,6 +510,16 @@ class _InspeccionesScreenState extends State<InspeccionesScreen> {
                       labelText: 'Cliente',
                       errorText: _clienteShowError ? _clienteError : null,
                       border: OutlineInputBorder(
+                        borderSide: BorderSide(color: primaryColor, width: 1.0),
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: primaryColor, width: 1.0),
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+
+                      disabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.grey, width: 1.0),
                         borderRadius: BorderRadius.circular(10),
                       ),
                     ),
@@ -606,6 +613,16 @@ class _InspeccionesScreenState extends State<InspeccionesScreen> {
                 labelText: 'Tipo de Trabajo',
                 errorText: _tipoTrabajoShowError ? _tipoTrabajoError : null,
                 border: OutlineInputBorder(
+                  borderSide: BorderSide(color: primaryColor, width: 1.0),
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                enabledBorder: OutlineInputBorder(
+                  borderSide: BorderSide(color: primaryColor, width: 1.0),
+                  borderRadius: BorderRadius.circular(10),
+                ),
+
+                disabledBorder: OutlineInputBorder(
+                  borderSide: BorderSide(color: Colors.grey, width: 1.0),
                   borderRadius: BorderRadius.circular(10),
                 ),
               ),
@@ -727,12 +744,14 @@ class _InspeccionesScreenState extends State<InspeccionesScreen> {
 
   Future<void> _generarCuestionario() async {
     FocusScope.of(context).unfocus();
+    final appStateProvider = context.read<AppStateProvider>();
+    User user = appStateProvider.user;
 
     String? result = await Navigator.push(
       context,
       MaterialPageRoute(
         builder: (context) => InspeccionCuestionarioScreen(
-          user: widget.user,
+          user: user,
           causante: _causante,
           obra: obra,
           cliente: _cliente,
@@ -928,7 +947,7 @@ class _InspeccionesScreenState extends State<InspeccionesScreen> {
           const SizedBox(width: 10),
           ElevatedButton(
             style: ElevatedButton.styleFrom(
-              backgroundColor: const Color(0xFF781f1e),
+              backgroundColor: primaryColor,
               minimumSize: const Size(50, 50),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(5),
@@ -937,7 +956,7 @@ class _InspeccionesScreenState extends State<InspeccionesScreen> {
             onPressed: () async {
               Obra? obra2 = await Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => ObrasScreen()),
+                MaterialPageRoute(builder: (context) => ObrasScreen(opcion: 2)),
               );
               if (obra2 != null) {
                 obra = obra2;

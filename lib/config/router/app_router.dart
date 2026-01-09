@@ -103,7 +103,7 @@ final appRouter = GoRouter(
     GoRoute(
       path: '/obras',
       builder: (context, state) {
-        return ObrasScreen();
+        return ObrasScreen(opcion: 1);
       },
     ),
 
@@ -181,6 +181,13 @@ final appRouter = GoRouter(
       path: '/rrhh',
       builder: (context, state) {
         return RrhhMenuScreen();
+      },
+    ),
+
+    GoRoute(
+      path: '/inspecciones',
+      builder: (context, state) {
+        return InspeccionesListaScreen();
       },
     ),
 

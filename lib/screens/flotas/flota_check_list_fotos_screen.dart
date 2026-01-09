@@ -9,6 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:intl/intl.dart';
+import 'package:keypressapp/utils/colors.dart';
 
 import '../../helpers/helpers.dart';
 import '../../models/models.dart';
@@ -706,7 +707,7 @@ class _RowCustom extends StatelessWidget {
               titulo,
               style: const TextStyle(
                 fontSize: 12,
-                color: Color(0xFF781f1e),
+                color: primaryColor,
                 fontWeight: FontWeight.bold,
               ),
             ),
