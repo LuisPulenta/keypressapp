@@ -46,7 +46,7 @@ class _InspeccionesListaScreenState extends State<InspeccionesListaScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: fondo,
       appBar: AppBar(
         title: const Text('Inspecciones'),
         centerTitle: true,
@@ -283,8 +283,8 @@ class _InspeccionesListaScreenState extends State<InspeccionesListaScreen> {
           int finobra = e.obra.length >= largo ? largo : e.obra.length;
 
           return Card(
-            color: const Color(0xFFC7C7C8),
-            shadowColor: Colors.white,
+            color: Colors.white,
+            shadowColor: const Color(0xFFC7C7C8),
             elevation: 10,
             margin: const EdgeInsets.fromLTRB(10, 0, 10, 5),
             child: InkWell(

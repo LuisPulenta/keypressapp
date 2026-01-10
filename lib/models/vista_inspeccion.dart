@@ -14,27 +14,28 @@ class VistaInspeccion {
   int idCliente = 0;
   int idTipoTrabajo = 0;
 
-  VistaInspeccion(
-      {required this.idInspeccion,
-      required this.usuarioAlta,
-      required this.fecha,
-      required this.empleado,
-      required this.cliente,
-      required this.tipoTrabajo,
-      required this.obra,
-      required this.totalPreguntas,
-      required this.totalNo,
-      required this.puntos,
-      required this.dniSR,
-      required this.nombreSR,
-      required this.idCliente,
-      required this.idTipoTrabajo});
+  VistaInspeccion({
+    required this.idInspeccion,
+    required this.usuarioAlta,
+    required this.fecha,
+    required this.empleado,
+    required this.cliente,
+    required this.tipoTrabajo,
+    required this.obra,
+    required this.totalPreguntas,
+    required this.totalNo,
+    required this.puntos,
+    required this.dniSR,
+    required this.nombreSR,
+    required this.idCliente,
+    required this.idTipoTrabajo,
+  });
 
   VistaInspeccion.fromJson(Map<String, dynamic> json) {
     idInspeccion = json['idInspeccion'];
     usuarioAlta = json['usuarioAlta'];
     fecha = json['fecha'];
-    empleado = json['empleado'];
+    empleado = json['empleado'] ?? '';
     cliente = json['cliente'];
     tipoTrabajo = json['tipoTrabajo'];
     obra = json['obra'];

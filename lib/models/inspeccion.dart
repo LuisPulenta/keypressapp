@@ -8,7 +8,7 @@ class Inspeccion {
   int idObra = 0;
   String? supervisor = '';
   String vehiculo = '';
-  int nroLegajo = 0;
+  String nroLegajo = '';
   String grupoC = '';
   String causanteC = '';
   String dni = '';
