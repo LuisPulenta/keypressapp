@@ -147,7 +147,7 @@ class _InspeccionDuplicarScreenState extends State<InspeccionDuplicarScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF484848),
+      backgroundColor: Colors.white,
       appBar: AppBar(
         title: const Text('Duplicar Inspección'),
         centerTitle: true,
@@ -179,7 +179,7 @@ class _InspeccionDuplicarScreenState extends State<InspeccionDuplicarScreen> {
                 child: Text(
                   'Está por generar una Nueva Inspección a partir de duplicar la siguiente Inspección:',
                   style: TextStyle(
-                    color: Colors.white,
+                    color: primaryColor,
                     fontSize: 14,
                     fontWeight: FontWeight.normal,
                   ),
@@ -191,7 +191,7 @@ class _InspeccionDuplicarScreenState extends State<InspeccionDuplicarScreen> {
                 child: Text(
                   'Seleccione el empleado para el cual se generará la Inspección duplicada:',
                   style: TextStyle(
-                    color: Colors.white,
+                    color: primaryColor,
                     fontSize: 14,
                     fontWeight: FontWeight.normal,
                   ),
@@ -229,8 +229,8 @@ class _InspeccionDuplicarScreenState extends State<InspeccionDuplicarScreen> {
         ? largo
         : widget.vistaInspeccion.obra.length;
     return Card(
-      color: const Color(0xFFC7C7C8),
-      shadowColor: Colors.white,
+      color: Colors.white,
+      shadowColor: const Color(0xFFC7C7C8),
       elevation: 10,
       margin: const EdgeInsets.fromLTRB(10, 0, 10, 5),
       child: Container(

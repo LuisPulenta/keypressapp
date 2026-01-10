@@ -8,6 +8,7 @@ import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:grouped_list/grouped_list.dart';
+import 'package:keypressapp/utils/colors.dart';
 
 import '../../components/loader_component.dart';
 import '../../helpers/helpers.dart';
@@ -99,7 +100,7 @@ class _InspeccionCuestionarioDuplicadoScreenState
         'imagedesdeweb': element.foto,
         'fotodesdeweb':
             element.foto !=
-            'https://gaos2.keypress.com.ar/RowingAppApi/images/Inspecciones/noimage.png',
+            'https://gaos2.keypress.com.ar/KPEstructurasApi/images/Inspecciones/noimage.png',
         'soloTexto': element.soloTexto,
         'obsApp': element.obsApp,
       });
@@ -126,7 +127,7 @@ class _InspeccionCuestionarioDuplicadoScreenState
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 195, 191, 191),
+      backgroundColor: Colors.white,
       appBar: AppBar(
         title: const Text('Cuestionario'),
         centerTitle: true,
@@ -202,7 +203,7 @@ class _InspeccionCuestionarioDuplicadoScreenState
                     widget.detallesFormulariosCompleto.length.toString(),
                     style: const TextStyle(
                       fontSize: 14,
-                      color: Colors.blue,
+                      color: primaryColor,
                       fontWeight: FontWeight.normal,
                     ),
                   ),
@@ -222,7 +223,7 @@ class _InspeccionCuestionarioDuplicadoScreenState
                     respSI.toString(),
                     style: const TextStyle(
                       fontSize: 14,
-                      color: Colors.blue,
+                      color: primaryColor,
                       fontWeight: FontWeight.normal,
                     ),
                   ),
@@ -247,7 +248,7 @@ class _InspeccionCuestionarioDuplicadoScreenState
                         .toString(),
                     style: const TextStyle(
                       fontSize: 14,
-                      color: Colors.blue,
+                      color: primaryColor,
                       fontWeight: FontWeight.normal,
                     ),
                   ),
@@ -273,7 +274,7 @@ class _InspeccionCuestionarioDuplicadoScreenState
                     respTXT.toString(),
                     style: const TextStyle(
                       fontSize: 14,
-                      color: Colors.blue,
+                      color: primaryColor,
                       fontWeight: FontWeight.normal,
                     ),
                   ),
@@ -293,7 +294,7 @@ class _InspeccionCuestionarioDuplicadoScreenState
                     respNO.toString(),
                     style: const TextStyle(
                       fontSize: 14,
-                      color: Colors.blue,
+                      color: primaryColor,
                       fontWeight: FontWeight.normal,
                     ),
                   ),
@@ -319,7 +320,7 @@ class _InspeccionCuestionarioDuplicadoScreenState
                     '',
                     style: TextStyle(
                       fontSize: 14,
-                      color: Colors.blue,
+                      color: primaryColor,
                       fontWeight: FontWeight.normal,
                     ),
                   ),
@@ -339,7 +340,7 @@ class _InspeccionCuestionarioDuplicadoScreenState
                     respNA.toString(),
                     style: const TextStyle(
                       fontSize: 14,
-                      color: Colors.blue,
+                      color: primaryColor,
                       fontWeight: FontWeight.normal,
                     ),
                   ),
@@ -359,7 +360,7 @@ class _InspeccionCuestionarioDuplicadoScreenState
                     puntos.toString(),
                     style: const TextStyle(
                       fontSize: 14,
-                      color: Colors.blue,
+                      color: primaryColor,
                       fontWeight: FontWeight.normal,
                     ),
                   ),
@@ -817,7 +818,7 @@ class _InspeccionCuestionarioDuplicadoScreenState
                                   },
                                   icon: const Icon(
                                     Icons.loop,
-                                    color: Colors.blue,
+                                    color: primaryColor,
                                   ),
                                 ),
                               ],
@@ -825,7 +826,7 @@ class _InspeccionCuestionarioDuplicadoScreenState
 
                       !element['photoChanged']
                           ? element['imagedesdeweb'] !=
-                                    'https://gaos2.keypress.com.ar/RowingAppApi/images/Inspecciones/noimage.png'
+                                    'https://gaos2.keypress.com.ar/KPEstructurasApi/images/Inspecciones/noimage.png'
                                 ? CachedNetworkImage(
                                     imageUrl: element['imagedesdeweb'],
                                     errorWidget: (context, url, error) =>
@@ -875,7 +876,7 @@ class _InspeccionCuestionarioDuplicadoScreenState
                           element['cumple'] != 'N/A' &&
                           element['obsApp'] != '')
                       ? Colors.white
-                      : Colors.blue[400],
+                      : primaryColor,
                   child: Column(
                     children: [
                       ListTile(
@@ -1262,7 +1263,7 @@ class _InspeccionCuestionarioDuplicadoScreenState
                                   },
                                   icon: const Icon(
                                     Icons.loop,
-                                    color: Colors.blue,
+                                    color: primaryColor,
                                   ),
                                 ),
                               ],
@@ -1488,7 +1489,7 @@ class _InspeccionCuestionarioDuplicadoScreenState
 
         if (element['fotodesdeweb'] == true) {
           // ignore: prefer_interpolation_to_compose_strings
-          foto = '~' + element['imagedesdeweb'].substring(42);
+          foto = '~' + element['imagedesdeweb'].substring(46);
         }
 
         Map<String, dynamic> request3 = {
