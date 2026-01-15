@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:geolocator/geolocator.dart';
 import 'package:provider/provider.dart';
 
 import '../../providers/permissions_provider.dart';
@@ -152,7 +153,20 @@ class _EnableGpsMessage extends StatelessWidget {
           height: 250,
           child: SvgPicture.asset('assets/confirm.svg'),
         ),
+
+        CustomOutlinedButton(
+          isFilled: true,
+          backGroundColor: primaryColor.withOpacity(0.3),
+          text: 'Ir a configuración',
+          onPressed: () {
+            abrirAjustesGPS();
+          },
+        ),
       ],
     );
+  }
+
+  void abrirAjustesGPS() async {
+    await Geolocator.openLocationSettings();
   }
 }
