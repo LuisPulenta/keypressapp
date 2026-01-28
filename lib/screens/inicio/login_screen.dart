@@ -29,11 +29,11 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   //----------------------- Variables -----------------------------
 
-  // String _email = '';
-  // String _password = '';
+  String _email = '';
+  String _password = '';
 
-  String _email = 'KEYPRESS';
-  String _password = 'KEYROOT';
+  // String _email = 'KEYPRESS';
+  // String _password = 'KEYROOT';
 
   // String _email = 'jquinteros';
   // String _password = '74108520';
