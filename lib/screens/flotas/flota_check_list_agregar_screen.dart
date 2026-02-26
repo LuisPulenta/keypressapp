@@ -3526,12 +3526,12 @@ class _FlotaCheckListAgregarScreenState
       context: context,
       initialDate: DateTime.now(),
       firstDate: DateTime(
-        DateTime.now().year,
+        DateTime.now().year - 1,
         DateTime.now().month,
         DateTime.now().day,
       ),
       lastDate: DateTime(
-        DateTime.now().year + 5,
+        DateTime.now().year + 1,
         DateTime.now().month,
         DateTime.now().day,
       ),
@@ -3553,12 +3553,12 @@ class _FlotaCheckListAgregarScreenState
       context: context,
       initialDate: DateTime.now(),
       firstDate: DateTime(
-        DateTime.now().year,
+        DateTime.now().year - 1,
         DateTime.now().month,
         DateTime.now().day,
       ),
       lastDate: DateTime(
-        DateTime.now().year + 5,
+        DateTime.now().year + 1,
         DateTime.now().month,
         DateTime.now().day,
       ),
@@ -3580,12 +3580,12 @@ class _FlotaCheckListAgregarScreenState
       context: context,
       initialDate: DateTime.now(),
       firstDate: DateTime(
-        DateTime.now().year,
+        DateTime.now().year - 1,
         DateTime.now().month,
         DateTime.now().day,
       ),
       lastDate: DateTime(
-        DateTime.now().year + 5,
+        DateTime.now().year + 1,
         DateTime.now().month,
         DateTime.now().day,
       ),
